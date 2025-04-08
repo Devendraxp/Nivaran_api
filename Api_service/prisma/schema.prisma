@@ -1,0 +1,99 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+model ApiService {
+  id                    String        @id @default(uuid())
+  publisherId           String
+  name                  String
+  description           String
+  category              ApiCategory
+  tags                  String[]
+  baseUrl               String
+  availableRoute        String[]
+  applicableFilter      String[]
+  termsOfUse            String
+  visibility            Boolean
+  isLive                Boolean
+  docs                  String
+  suscriptionPerMonth   Float
+  suscriptionQuater     Float
+  suscriptionPerHalfYear Float
+  suscriptionPerYear    Float
+  apiKeys               ApiKey[]      @relation("ServiceApiKeys")
+  subscriptions         Subscription[] @relation("ServiceSubscriptions")
+  transactions          Transaction[]  @relation("ServiceTransactions")
+}
+
+model ApiKey {
+  id          String        @id @default(uuid())
+  apiId       String
+  api         ApiService    @relation("ServiceApiKeys", fields: [apiId], references: [id])
+  userId      String
+  whereToUse  KeyUsageType
+  apiKey      String
+  subscriptions Subscription[] @relation("KeySubscriptions")
+  transactions Transaction[]  @relation("KeyTransactions")
+}
+
+model Subscription {
+  id        String      @id @default(uuid())
+  apiId     String
+  api       ApiService  @relation("ServiceSubscriptions", fields: [apiId], references: [id])
+  apiKeyId  String
+  apiKey    ApiKey      @relation("KeySubscriptions", fields: [apiKeyId], references: [id])
+  userId    String
+  startDate DateTime
+  endDate   DateTime
+}
+
+model Transaction {
+  id            String      @id @default(uuid())
+  apiId         String
+  api           ApiService  @relation("ServiceTransactions", fields: [apiId], references: [id])
+  apiKeyId      String
+  apiKey        ApiKey      @relation("KeyTransactions", fields: [apiKeyId], references: [id])
+  userId        String
+  date          DateTime
+  amount        Float
+  transactionId String
+}
+
+model Notification {
+  id          String    @id @default(uuid())
+  title       String
+  description String
+  toUser      String
+  fromUser    String
+  url         String
+  isOpened    Boolean
+  date        DateTime
+}
+
+enum ApiCategory {
+  FINANCE
+  WEATHER
+  SOCIAL
+  MAPS
+  ECOMMERCE
+  OTHER
+}
+
+enum KeyUsageType {
+  HEADERS
+  BODY
+  PARAMETERS
+}

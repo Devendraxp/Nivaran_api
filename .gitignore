@@ -1,0 +1,32 @@
+# Node.js dependencies
+*/node_modules/
+*/package-lock.json
+
+# Specific folder node modules
+/Api_service/node_modules/
+/Api_service/package-lock.json
+
+/Frontend/node_modules/
+/Frontend/package-lock.json
+
+/Notification_service/node_modules/
+/Notification_service/package-lock.json
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
