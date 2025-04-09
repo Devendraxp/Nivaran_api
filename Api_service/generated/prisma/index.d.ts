@@ -306,7 +306,7 @@ export namespace Prisma {
 
   /**
    * Prisma Client JS version: 6.6.0
-   * Query Engine version: 173f8d54f8d52e692c7e27e72a88314ec7aeff60
+   * Query Engine version: f676762280b54cd07c770017ed3711ddde35f37a
    */
   export type PrismaVersion = {
     client: string
@@ -1368,17 +1368,19 @@ export namespace Prisma {
   }
 
   export type ApiServiceAvgAggregateOutputType = {
-    suscriptionPerMonth: number | null
-    suscriptionQuater: number | null
-    suscriptionPerHalfYear: number | null
-    suscriptionPerYear: number | null
+    subscriptionPerMonth: number | null
+    subscriptionPerQuatre: number | null
+    subscriptionPerHalfYear: number | null
+    subscriptionPerYear: number | null
+    rateLimit: number | null
   }
 
   export type ApiServiceSumAggregateOutputType = {
-    suscriptionPerMonth: number | null
-    suscriptionQuater: number | null
-    suscriptionPerHalfYear: number | null
-    suscriptionPerYear: number | null
+    subscriptionPerMonth: number | null
+    subscriptionPerQuatre: number | null
+    subscriptionPerHalfYear: number | null
+    subscriptionPerYear: number | null
+    rateLimit: number | null
   }
 
   export type ApiServiceMinAggregateOutputType = {
@@ -1392,10 +1394,13 @@ export namespace Prisma {
     visibility: boolean | null
     isLive: boolean | null
     docs: string | null
-    suscriptionPerMonth: number | null
-    suscriptionQuater: number | null
-    suscriptionPerHalfYear: number | null
-    suscriptionPerYear: number | null
+    isPaid: boolean | null
+    subscriptionPerMonth: number | null
+    subscriptionPerQuatre: number | null
+    subscriptionPerHalfYear: number | null
+    subscriptionPerYear: number | null
+    isSecured: boolean | null
+    rateLimit: number | null
   }
 
   export type ApiServiceMaxAggregateOutputType = {
@@ -1409,10 +1414,13 @@ export namespace Prisma {
     visibility: boolean | null
     isLive: boolean | null
     docs: string | null
-    suscriptionPerMonth: number | null
-    suscriptionQuater: number | null
-    suscriptionPerHalfYear: number | null
-    suscriptionPerYear: number | null
+    isPaid: boolean | null
+    subscriptionPerMonth: number | null
+    subscriptionPerQuatre: number | null
+    subscriptionPerHalfYear: number | null
+    subscriptionPerYear: number | null
+    isSecured: boolean | null
+    rateLimit: number | null
   }
 
   export type ApiServiceCountAggregateOutputType = {
@@ -1429,26 +1437,31 @@ export namespace Prisma {
     visibility: number
     isLive: number
     docs: number
-    suscriptionPerMonth: number
-    suscriptionQuater: number
-    suscriptionPerHalfYear: number
-    suscriptionPerYear: number
+    isPaid: number
+    subscriptionPerMonth: number
+    subscriptionPerQuatre: number
+    subscriptionPerHalfYear: number
+    subscriptionPerYear: number
+    isSecured: number
+    rateLimit: number
     _all: number
   }
 
 
   export type ApiServiceAvgAggregateInputType = {
-    suscriptionPerMonth?: true
-    suscriptionQuater?: true
-    suscriptionPerHalfYear?: true
-    suscriptionPerYear?: true
+    subscriptionPerMonth?: true
+    subscriptionPerQuatre?: true
+    subscriptionPerHalfYear?: true
+    subscriptionPerYear?: true
+    rateLimit?: true
   }
 
   export type ApiServiceSumAggregateInputType = {
-    suscriptionPerMonth?: true
-    suscriptionQuater?: true
-    suscriptionPerHalfYear?: true
-    suscriptionPerYear?: true
+    subscriptionPerMonth?: true
+    subscriptionPerQuatre?: true
+    subscriptionPerHalfYear?: true
+    subscriptionPerYear?: true
+    rateLimit?: true
   }
 
   export type ApiServiceMinAggregateInputType = {
@@ -1462,10 +1475,13 @@ export namespace Prisma {
     visibility?: true
     isLive?: true
     docs?: true
-    suscriptionPerMonth?: true
-    suscriptionQuater?: true
-    suscriptionPerHalfYear?: true
-    suscriptionPerYear?: true
+    isPaid?: true
+    subscriptionPerMonth?: true
+    subscriptionPerQuatre?: true
+    subscriptionPerHalfYear?: true
+    subscriptionPerYear?: true
+    isSecured?: true
+    rateLimit?: true
   }
 
   export type ApiServiceMaxAggregateInputType = {
@@ -1479,10 +1495,13 @@ export namespace Prisma {
     visibility?: true
     isLive?: true
     docs?: true
-    suscriptionPerMonth?: true
-    suscriptionQuater?: true
-    suscriptionPerHalfYear?: true
-    suscriptionPerYear?: true
+    isPaid?: true
+    subscriptionPerMonth?: true
+    subscriptionPerQuatre?: true
+    subscriptionPerHalfYear?: true
+    subscriptionPerYear?: true
+    isSecured?: true
+    rateLimit?: true
   }
 
   export type ApiServiceCountAggregateInputType = {
@@ -1499,10 +1518,13 @@ export namespace Prisma {
     visibility?: true
     isLive?: true
     docs?: true
-    suscriptionPerMonth?: true
-    suscriptionQuater?: true
-    suscriptionPerHalfYear?: true
-    suscriptionPerYear?: true
+    isPaid?: true
+    subscriptionPerMonth?: true
+    subscriptionPerQuatre?: true
+    subscriptionPerHalfYear?: true
+    subscriptionPerYear?: true
+    isSecured?: true
+    rateLimit?: true
     _all?: true
   }
 
@@ -1606,10 +1628,13 @@ export namespace Prisma {
     visibility: boolean
     isLive: boolean
     docs: string
-    suscriptionPerMonth: number
-    suscriptionQuater: number
-    suscriptionPerHalfYear: number
-    suscriptionPerYear: number
+    isPaid: boolean
+    subscriptionPerMonth: number
+    subscriptionPerQuatre: number
+    subscriptionPerHalfYear: number
+    subscriptionPerYear: number
+    isSecured: boolean
+    rateLimit: number
     _count: ApiServiceCountAggregateOutputType | null
     _avg: ApiServiceAvgAggregateOutputType | null
     _sum: ApiServiceSumAggregateOutputType | null
@@ -1645,10 +1670,13 @@ export namespace Prisma {
     visibility?: boolean
     isLive?: boolean
     docs?: boolean
-    suscriptionPerMonth?: boolean
-    suscriptionQuater?: boolean
-    suscriptionPerHalfYear?: boolean
-    suscriptionPerYear?: boolean
+    isPaid?: boolean
+    subscriptionPerMonth?: boolean
+    subscriptionPerQuatre?: boolean
+    subscriptionPerHalfYear?: boolean
+    subscriptionPerYear?: boolean
+    isSecured?: boolean
+    rateLimit?: boolean
     apiKeys?: boolean | ApiService$apiKeysArgs<ExtArgs>
     subscriptions?: boolean | ApiService$subscriptionsArgs<ExtArgs>
     transactions?: boolean | ApiService$transactionsArgs<ExtArgs>
@@ -1669,10 +1697,13 @@ export namespace Prisma {
     visibility?: boolean
     isLive?: boolean
     docs?: boolean
-    suscriptionPerMonth?: boolean
-    suscriptionQuater?: boolean
-    suscriptionPerHalfYear?: boolean
-    suscriptionPerYear?: boolean
+    isPaid?: boolean
+    subscriptionPerMonth?: boolean
+    subscriptionPerQuatre?: boolean
+    subscriptionPerHalfYear?: boolean
+    subscriptionPerYear?: boolean
+    isSecured?: boolean
+    rateLimit?: boolean
   }, ExtArgs["result"]["apiService"]>
 
   export type ApiServiceSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -1689,10 +1720,13 @@ export namespace Prisma {
     visibility?: boolean
     isLive?: boolean
     docs?: boolean
-    suscriptionPerMonth?: boolean
-    suscriptionQuater?: boolean
-    suscriptionPerHalfYear?: boolean
-    suscriptionPerYear?: boolean
+    isPaid?: boolean
+    subscriptionPerMonth?: boolean
+    subscriptionPerQuatre?: boolean
+    subscriptionPerHalfYear?: boolean
+    subscriptionPerYear?: boolean
+    isSecured?: boolean
+    rateLimit?: boolean
   }, ExtArgs["result"]["apiService"]>
 
   export type ApiServiceSelectScalar = {
@@ -1709,13 +1743,16 @@ export namespace Prisma {
     visibility?: boolean
     isLive?: boolean
     docs?: boolean
-    suscriptionPerMonth?: boolean
-    suscriptionQuater?: boolean
-    suscriptionPerHalfYear?: boolean
-    suscriptionPerYear?: boolean
+    isPaid?: boolean
+    subscriptionPerMonth?: boolean
+    subscriptionPerQuatre?: boolean
+    subscriptionPerHalfYear?: boolean
+    subscriptionPerYear?: boolean
+    isSecured?: boolean
+    rateLimit?: boolean
   }
 
-  export type ApiServiceOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "publisherId" | "name" | "description" | "category" | "tags" | "baseUrl" | "availableRoute" | "applicableFilter" | "termsOfUse" | "visibility" | "isLive" | "docs" | "suscriptionPerMonth" | "suscriptionQuater" | "suscriptionPerHalfYear" | "suscriptionPerYear", ExtArgs["result"]["apiService"]>
+  export type ApiServiceOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "publisherId" | "name" | "description" | "category" | "tags" | "baseUrl" | "availableRoute" | "applicableFilter" | "termsOfUse" | "visibility" | "isLive" | "docs" | "isPaid" | "subscriptionPerMonth" | "subscriptionPerQuatre" | "subscriptionPerHalfYear" | "subscriptionPerYear" | "isSecured" | "rateLimit", ExtArgs["result"]["apiService"]>
   export type ApiServiceInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     apiKeys?: boolean | ApiService$apiKeysArgs<ExtArgs>
     subscriptions?: boolean | ApiService$subscriptionsArgs<ExtArgs>
@@ -1746,10 +1783,13 @@ export namespace Prisma {
       visibility: boolean
       isLive: boolean
       docs: string
-      suscriptionPerMonth: number
-      suscriptionQuater: number
-      suscriptionPerHalfYear: number
-      suscriptionPerYear: number
+      isPaid: boolean
+      subscriptionPerMonth: number
+      subscriptionPerQuatre: number
+      subscriptionPerHalfYear: number
+      subscriptionPerYear: number
+      isSecured: boolean
+      rateLimit: number
     }, ExtArgs["result"]["apiService"]>
     composites: {}
   }
@@ -2189,10 +2229,13 @@ export namespace Prisma {
     readonly visibility: FieldRef<"ApiService", 'Boolean'>
     readonly isLive: FieldRef<"ApiService", 'Boolean'>
     readonly docs: FieldRef<"ApiService", 'String'>
-    readonly suscriptionPerMonth: FieldRef<"ApiService", 'Float'>
-    readonly suscriptionQuater: FieldRef<"ApiService", 'Float'>
-    readonly suscriptionPerHalfYear: FieldRef<"ApiService", 'Float'>
-    readonly suscriptionPerYear: FieldRef<"ApiService", 'Float'>
+    readonly isPaid: FieldRef<"ApiService", 'Boolean'>
+    readonly subscriptionPerMonth: FieldRef<"ApiService", 'Float'>
+    readonly subscriptionPerQuatre: FieldRef<"ApiService", 'Float'>
+    readonly subscriptionPerHalfYear: FieldRef<"ApiService", 'Float'>
+    readonly subscriptionPerYear: FieldRef<"ApiService", 'Float'>
+    readonly isSecured: FieldRef<"ApiService", 'Boolean'>
+    readonly rateLimit: FieldRef<"ApiService", 'Int'>
   }
     
 
@@ -7054,10 +7097,13 @@ export namespace Prisma {
     visibility: 'visibility',
     isLive: 'isLive',
     docs: 'docs',
-    suscriptionPerMonth: 'suscriptionPerMonth',
-    suscriptionQuater: 'suscriptionQuater',
-    suscriptionPerHalfYear: 'suscriptionPerHalfYear',
-    suscriptionPerYear: 'suscriptionPerYear'
+    isPaid: 'isPaid',
+    subscriptionPerMonth: 'subscriptionPerMonth',
+    subscriptionPerQuatre: 'subscriptionPerQuatre',
+    subscriptionPerHalfYear: 'subscriptionPerHalfYear',
+    subscriptionPerYear: 'subscriptionPerYear',
+    isSecured: 'isSecured',
+    rateLimit: 'rateLimit'
   };
 
   export type ApiServiceScalarFieldEnum = (typeof ApiServiceScalarFieldEnum)[keyof typeof ApiServiceScalarFieldEnum]
@@ -7184,6 +7230,20 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'Int'
+   */
+  export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
+    
+
+
+  /**
+   * Reference to a field of type 'Int[]'
+   */
+  export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
+    
+
+
+  /**
    * Reference to a field of type 'KeyUsageType'
    */
   export type EnumKeyUsageTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'KeyUsageType'>
@@ -7209,20 +7269,6 @@ export namespace Prisma {
    */
   export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>
     
-
-
-  /**
-   * Reference to a field of type 'Int'
-   */
-  export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
-    
-
-
-  /**
-   * Reference to a field of type 'Int[]'
-   */
-  export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
-    
   /**
    * Deep Input Types
    */
@@ -7245,10 +7291,13 @@ export namespace Prisma {
     visibility?: BoolFilter<"ApiService"> | boolean
     isLive?: BoolFilter<"ApiService"> | boolean
     docs?: StringFilter<"ApiService"> | string
-    suscriptionPerMonth?: FloatFilter<"ApiService"> | number
-    suscriptionQuater?: FloatFilter<"ApiService"> | number
-    suscriptionPerHalfYear?: FloatFilter<"ApiService"> | number
-    suscriptionPerYear?: FloatFilter<"ApiService"> | number
+    isPaid?: BoolFilter<"ApiService"> | boolean
+    subscriptionPerMonth?: FloatFilter<"ApiService"> | number
+    subscriptionPerQuatre?: FloatFilter<"ApiService"> | number
+    subscriptionPerHalfYear?: FloatFilter<"ApiService"> | number
+    subscriptionPerYear?: FloatFilter<"ApiService"> | number
+    isSecured?: BoolFilter<"ApiService"> | boolean
+    rateLimit?: IntFilter<"ApiService"> | number
     apiKeys?: ApiKeyListRelationFilter
     subscriptions?: SubscriptionListRelationFilter
     transactions?: TransactionListRelationFilter
@@ -7268,10 +7317,13 @@ export namespace Prisma {
     visibility?: SortOrder
     isLive?: SortOrder
     docs?: SortOrder
-    suscriptionPerMonth?: SortOrder
-    suscriptionQuater?: SortOrder
-    suscriptionPerHalfYear?: SortOrder
-    suscriptionPerYear?: SortOrder
+    isPaid?: SortOrder
+    subscriptionPerMonth?: SortOrder
+    subscriptionPerQuatre?: SortOrder
+    subscriptionPerHalfYear?: SortOrder
+    subscriptionPerYear?: SortOrder
+    isSecured?: SortOrder
+    rateLimit?: SortOrder
     apiKeys?: ApiKeyOrderByRelationAggregateInput
     subscriptions?: SubscriptionOrderByRelationAggregateInput
     transactions?: TransactionOrderByRelationAggregateInput
@@ -7294,10 +7346,13 @@ export namespace Prisma {
     visibility?: BoolFilter<"ApiService"> | boolean
     isLive?: BoolFilter<"ApiService"> | boolean
     docs?: StringFilter<"ApiService"> | string
-    suscriptionPerMonth?: FloatFilter<"ApiService"> | number
-    suscriptionQuater?: FloatFilter<"ApiService"> | number
-    suscriptionPerHalfYear?: FloatFilter<"ApiService"> | number
-    suscriptionPerYear?: FloatFilter<"ApiService"> | number
+    isPaid?: BoolFilter<"ApiService"> | boolean
+    subscriptionPerMonth?: FloatFilter<"ApiService"> | number
+    subscriptionPerQuatre?: FloatFilter<"ApiService"> | number
+    subscriptionPerHalfYear?: FloatFilter<"ApiService"> | number
+    subscriptionPerYear?: FloatFilter<"ApiService"> | number
+    isSecured?: BoolFilter<"ApiService"> | boolean
+    rateLimit?: IntFilter<"ApiService"> | number
     apiKeys?: ApiKeyListRelationFilter
     subscriptions?: SubscriptionListRelationFilter
     transactions?: TransactionListRelationFilter
@@ -7317,10 +7372,13 @@ export namespace Prisma {
     visibility?: SortOrder
     isLive?: SortOrder
     docs?: SortOrder
-    suscriptionPerMonth?: SortOrder
-    suscriptionQuater?: SortOrder
-    suscriptionPerHalfYear?: SortOrder
-    suscriptionPerYear?: SortOrder
+    isPaid?: SortOrder
+    subscriptionPerMonth?: SortOrder
+    subscriptionPerQuatre?: SortOrder
+    subscriptionPerHalfYear?: SortOrder
+    subscriptionPerYear?: SortOrder
+    isSecured?: SortOrder
+    rateLimit?: SortOrder
     _count?: ApiServiceCountOrderByAggregateInput
     _avg?: ApiServiceAvgOrderByAggregateInput
     _max?: ApiServiceMaxOrderByAggregateInput
@@ -7345,10 +7403,13 @@ export namespace Prisma {
     visibility?: BoolWithAggregatesFilter<"ApiService"> | boolean
     isLive?: BoolWithAggregatesFilter<"ApiService"> | boolean
     docs?: StringWithAggregatesFilter<"ApiService"> | string
-    suscriptionPerMonth?: FloatWithAggregatesFilter<"ApiService"> | number
-    suscriptionQuater?: FloatWithAggregatesFilter<"ApiService"> | number
-    suscriptionPerHalfYear?: FloatWithAggregatesFilter<"ApiService"> | number
-    suscriptionPerYear?: FloatWithAggregatesFilter<"ApiService"> | number
+    isPaid?: BoolWithAggregatesFilter<"ApiService"> | boolean
+    subscriptionPerMonth?: FloatWithAggregatesFilter<"ApiService"> | number
+    subscriptionPerQuatre?: FloatWithAggregatesFilter<"ApiService"> | number
+    subscriptionPerHalfYear?: FloatWithAggregatesFilter<"ApiService"> | number
+    subscriptionPerYear?: FloatWithAggregatesFilter<"ApiService"> | number
+    isSecured?: BoolWithAggregatesFilter<"ApiService"> | boolean
+    rateLimit?: IntWithAggregatesFilter<"ApiService"> | number
   }
 
   export type ApiKeyWhereInput = {
@@ -7626,10 +7687,13 @@ export namespace Prisma {
     visibility: boolean
     isLive: boolean
     docs: string
-    suscriptionPerMonth: number
-    suscriptionQuater: number
-    suscriptionPerHalfYear: number
-    suscriptionPerYear: number
+    isPaid: boolean
+    subscriptionPerMonth: number
+    subscriptionPerQuatre: number
+    subscriptionPerHalfYear: number
+    subscriptionPerYear: number
+    isSecured: boolean
+    rateLimit: number
     apiKeys?: ApiKeyCreateNestedManyWithoutApiInput
     subscriptions?: SubscriptionCreateNestedManyWithoutApiInput
     transactions?: TransactionCreateNestedManyWithoutApiInput
@@ -7649,10 +7713,13 @@ export namespace Prisma {
     visibility: boolean
     isLive: boolean
     docs: string
-    suscriptionPerMonth: number
-    suscriptionQuater: number
-    suscriptionPerHalfYear: number
-    suscriptionPerYear: number
+    isPaid: boolean
+    subscriptionPerMonth: number
+    subscriptionPerQuatre: number
+    subscriptionPerHalfYear: number
+    subscriptionPerYear: number
+    isSecured: boolean
+    rateLimit: number
     apiKeys?: ApiKeyUncheckedCreateNestedManyWithoutApiInput
     subscriptions?: SubscriptionUncheckedCreateNestedManyWithoutApiInput
     transactions?: TransactionUncheckedCreateNestedManyWithoutApiInput
@@ -7672,10 +7739,13 @@ export namespace Prisma {
     visibility?: BoolFieldUpdateOperationsInput | boolean
     isLive?: BoolFieldUpdateOperationsInput | boolean
     docs?: StringFieldUpdateOperationsInput | string
-    suscriptionPerMonth?: FloatFieldUpdateOperationsInput | number
-    suscriptionQuater?: FloatFieldUpdateOperationsInput | number
-    suscriptionPerHalfYear?: FloatFieldUpdateOperationsInput | number
-    suscriptionPerYear?: FloatFieldUpdateOperationsInput | number
+    isPaid?: BoolFieldUpdateOperationsInput | boolean
+    subscriptionPerMonth?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerQuatre?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerHalfYear?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerYear?: FloatFieldUpdateOperationsInput | number
+    isSecured?: BoolFieldUpdateOperationsInput | boolean
+    rateLimit?: IntFieldUpdateOperationsInput | number
     apiKeys?: ApiKeyUpdateManyWithoutApiNestedInput
     subscriptions?: SubscriptionUpdateManyWithoutApiNestedInput
     transactions?: TransactionUpdateManyWithoutApiNestedInput
@@ -7695,10 +7765,13 @@ export namespace Prisma {
     visibility?: BoolFieldUpdateOperationsInput | boolean
     isLive?: BoolFieldUpdateOperationsInput | boolean
     docs?: StringFieldUpdateOperationsInput | string
-    suscriptionPerMonth?: FloatFieldUpdateOperationsInput | number
-    suscriptionQuater?: FloatFieldUpdateOperationsInput | number
-    suscriptionPerHalfYear?: FloatFieldUpdateOperationsInput | number
-    suscriptionPerYear?: FloatFieldUpdateOperationsInput | number
+    isPaid?: BoolFieldUpdateOperationsInput | boolean
+    subscriptionPerMonth?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerQuatre?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerHalfYear?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerYear?: FloatFieldUpdateOperationsInput | number
+    isSecured?: BoolFieldUpdateOperationsInput | boolean
+    rateLimit?: IntFieldUpdateOperationsInput | number
     apiKeys?: ApiKeyUncheckedUpdateManyWithoutApiNestedInput
     subscriptions?: SubscriptionUncheckedUpdateManyWithoutApiNestedInput
     transactions?: TransactionUncheckedUpdateManyWithoutApiNestedInput
@@ -7718,10 +7791,13 @@ export namespace Prisma {
     visibility: boolean
     isLive: boolean
     docs: string
-    suscriptionPerMonth: number
-    suscriptionQuater: number
-    suscriptionPerHalfYear: number
-    suscriptionPerYear: number
+    isPaid: boolean
+    subscriptionPerMonth: number
+    subscriptionPerQuatre: number
+    subscriptionPerHalfYear: number
+    subscriptionPerYear: number
+    isSecured: boolean
+    rateLimit: number
   }
 
   export type ApiServiceUpdateManyMutationInput = {
@@ -7738,10 +7814,13 @@ export namespace Prisma {
     visibility?: BoolFieldUpdateOperationsInput | boolean
     isLive?: BoolFieldUpdateOperationsInput | boolean
     docs?: StringFieldUpdateOperationsInput | string
-    suscriptionPerMonth?: FloatFieldUpdateOperationsInput | number
-    suscriptionQuater?: FloatFieldUpdateOperationsInput | number
-    suscriptionPerHalfYear?: FloatFieldUpdateOperationsInput | number
-    suscriptionPerYear?: FloatFieldUpdateOperationsInput | number
+    isPaid?: BoolFieldUpdateOperationsInput | boolean
+    subscriptionPerMonth?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerQuatre?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerHalfYear?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerYear?: FloatFieldUpdateOperationsInput | number
+    isSecured?: BoolFieldUpdateOperationsInput | boolean
+    rateLimit?: IntFieldUpdateOperationsInput | number
   }
 
   export type ApiServiceUncheckedUpdateManyInput = {
@@ -7758,10 +7837,13 @@ export namespace Prisma {
     visibility?: BoolFieldUpdateOperationsInput | boolean
     isLive?: BoolFieldUpdateOperationsInput | boolean
     docs?: StringFieldUpdateOperationsInput | string
-    suscriptionPerMonth?: FloatFieldUpdateOperationsInput | number
-    suscriptionQuater?: FloatFieldUpdateOperationsInput | number
-    suscriptionPerHalfYear?: FloatFieldUpdateOperationsInput | number
-    suscriptionPerYear?: FloatFieldUpdateOperationsInput | number
+    isPaid?: BoolFieldUpdateOperationsInput | boolean
+    subscriptionPerMonth?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerQuatre?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerHalfYear?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerYear?: FloatFieldUpdateOperationsInput | number
+    isSecured?: BoolFieldUpdateOperationsInput | boolean
+    rateLimit?: IntFieldUpdateOperationsInput | number
   }
 
   export type ApiKeyCreateInput = {
@@ -8079,6 +8161,17 @@ export namespace Prisma {
     not?: NestedFloatFilter<$PrismaModel> | number
   }
 
+  export type IntFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntFilter<$PrismaModel> | number
+  }
+
   export type ApiKeyListRelationFilter = {
     every?: ApiKeyWhereInput
     some?: ApiKeyWhereInput
@@ -8123,17 +8216,21 @@ export namespace Prisma {
     visibility?: SortOrder
     isLive?: SortOrder
     docs?: SortOrder
-    suscriptionPerMonth?: SortOrder
-    suscriptionQuater?: SortOrder
-    suscriptionPerHalfYear?: SortOrder
-    suscriptionPerYear?: SortOrder
+    isPaid?: SortOrder
+    subscriptionPerMonth?: SortOrder
+    subscriptionPerQuatre?: SortOrder
+    subscriptionPerHalfYear?: SortOrder
+    subscriptionPerYear?: SortOrder
+    isSecured?: SortOrder
+    rateLimit?: SortOrder
   }
 
   export type ApiServiceAvgOrderByAggregateInput = {
-    suscriptionPerMonth?: SortOrder
-    suscriptionQuater?: SortOrder
-    suscriptionPerHalfYear?: SortOrder
-    suscriptionPerYear?: SortOrder
+    subscriptionPerMonth?: SortOrder
+    subscriptionPerQuatre?: SortOrder
+    subscriptionPerHalfYear?: SortOrder
+    subscriptionPerYear?: SortOrder
+    rateLimit?: SortOrder
   }
 
   export type ApiServiceMaxOrderByAggregateInput = {
@@ -8147,10 +8244,13 @@ export namespace Prisma {
     visibility?: SortOrder
     isLive?: SortOrder
     docs?: SortOrder
-    suscriptionPerMonth?: SortOrder
-    suscriptionQuater?: SortOrder
-    suscriptionPerHalfYear?: SortOrder
-    suscriptionPerYear?: SortOrder
+    isPaid?: SortOrder
+    subscriptionPerMonth?: SortOrder
+    subscriptionPerQuatre?: SortOrder
+    subscriptionPerHalfYear?: SortOrder
+    subscriptionPerYear?: SortOrder
+    isSecured?: SortOrder
+    rateLimit?: SortOrder
   }
 
   export type ApiServiceMinOrderByAggregateInput = {
@@ -8164,17 +8264,21 @@ export namespace Prisma {
     visibility?: SortOrder
     isLive?: SortOrder
     docs?: SortOrder
-    suscriptionPerMonth?: SortOrder
-    suscriptionQuater?: SortOrder
-    suscriptionPerHalfYear?: SortOrder
-    suscriptionPerYear?: SortOrder
+    isPaid?: SortOrder
+    subscriptionPerMonth?: SortOrder
+    subscriptionPerQuatre?: SortOrder
+    subscriptionPerHalfYear?: SortOrder
+    subscriptionPerYear?: SortOrder
+    isSecured?: SortOrder
+    rateLimit?: SortOrder
   }
 
   export type ApiServiceSumOrderByAggregateInput = {
-    suscriptionPerMonth?: SortOrder
-    suscriptionQuater?: SortOrder
-    suscriptionPerHalfYear?: SortOrder
-    suscriptionPerYear?: SortOrder
+    subscriptionPerMonth?: SortOrder
+    subscriptionPerQuatre?: SortOrder
+    subscriptionPerHalfYear?: SortOrder
+    subscriptionPerYear?: SortOrder
+    rateLimit?: SortOrder
   }
 
   export type StringWithAggregatesFilter<$PrismaModel = never> = {
@@ -8227,6 +8331,22 @@ export namespace Prisma {
     _sum?: NestedFloatFilter<$PrismaModel>
     _min?: NestedFloatFilter<$PrismaModel>
     _max?: NestedFloatFilter<$PrismaModel>
+  }
+
+  export type IntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
   }
 
   export type EnumKeyUsageTypeFilter<$PrismaModel = never> = {
@@ -8485,6 +8605,14 @@ export namespace Prisma {
   }
 
   export type FloatFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
+  export type IntFieldUpdateOperationsInput = {
     set?: number
     increment?: number
     decrement?: number
@@ -8775,6 +8903,17 @@ export namespace Prisma {
     not?: NestedFloatFilter<$PrismaModel> | number
   }
 
+  export type NestedIntFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntFilter<$PrismaModel> | number
+  }
+
   export type NestedStringWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -8790,17 +8929,6 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedStringFilter<$PrismaModel>
     _max?: NestedStringFilter<$PrismaModel>
-  }
-
-  export type NestedIntFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntFilter<$PrismaModel> | number
   }
 
   export type NestedEnumApiCategoryWithAggregatesFilter<$PrismaModel = never> = {
@@ -8835,6 +8963,22 @@ export namespace Prisma {
     _sum?: NestedFloatFilter<$PrismaModel>
     _min?: NestedFloatFilter<$PrismaModel>
     _max?: NestedFloatFilter<$PrismaModel>
+  }
+
+  export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
   }
 
   export type NestedEnumKeyUsageTypeFilter<$PrismaModel = never> = {
@@ -9059,10 +9203,13 @@ export namespace Prisma {
     visibility: boolean
     isLive: boolean
     docs: string
-    suscriptionPerMonth: number
-    suscriptionQuater: number
-    suscriptionPerHalfYear: number
-    suscriptionPerYear: number
+    isPaid: boolean
+    subscriptionPerMonth: number
+    subscriptionPerQuatre: number
+    subscriptionPerHalfYear: number
+    subscriptionPerYear: number
+    isSecured: boolean
+    rateLimit: number
     subscriptions?: SubscriptionCreateNestedManyWithoutApiInput
     transactions?: TransactionCreateNestedManyWithoutApiInput
   }
@@ -9081,10 +9228,13 @@ export namespace Prisma {
     visibility: boolean
     isLive: boolean
     docs: string
-    suscriptionPerMonth: number
-    suscriptionQuater: number
-    suscriptionPerHalfYear: number
-    suscriptionPerYear: number
+    isPaid: boolean
+    subscriptionPerMonth: number
+    subscriptionPerQuatre: number
+    subscriptionPerHalfYear: number
+    subscriptionPerYear: number
+    isSecured: boolean
+    rateLimit: number
     subscriptions?: SubscriptionUncheckedCreateNestedManyWithoutApiInput
     transactions?: TransactionUncheckedCreateNestedManyWithoutApiInput
   }
@@ -9173,10 +9323,13 @@ export namespace Prisma {
     visibility?: BoolFieldUpdateOperationsInput | boolean
     isLive?: BoolFieldUpdateOperationsInput | boolean
     docs?: StringFieldUpdateOperationsInput | string
-    suscriptionPerMonth?: FloatFieldUpdateOperationsInput | number
-    suscriptionQuater?: FloatFieldUpdateOperationsInput | number
-    suscriptionPerHalfYear?: FloatFieldUpdateOperationsInput | number
-    suscriptionPerYear?: FloatFieldUpdateOperationsInput | number
+    isPaid?: BoolFieldUpdateOperationsInput | boolean
+    subscriptionPerMonth?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerQuatre?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerHalfYear?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerYear?: FloatFieldUpdateOperationsInput | number
+    isSecured?: BoolFieldUpdateOperationsInput | boolean
+    rateLimit?: IntFieldUpdateOperationsInput | number
     subscriptions?: SubscriptionUpdateManyWithoutApiNestedInput
     transactions?: TransactionUpdateManyWithoutApiNestedInput
   }
@@ -9195,10 +9348,13 @@ export namespace Prisma {
     visibility?: BoolFieldUpdateOperationsInput | boolean
     isLive?: BoolFieldUpdateOperationsInput | boolean
     docs?: StringFieldUpdateOperationsInput | string
-    suscriptionPerMonth?: FloatFieldUpdateOperationsInput | number
-    suscriptionQuater?: FloatFieldUpdateOperationsInput | number
-    suscriptionPerHalfYear?: FloatFieldUpdateOperationsInput | number
-    suscriptionPerYear?: FloatFieldUpdateOperationsInput | number
+    isPaid?: BoolFieldUpdateOperationsInput | boolean
+    subscriptionPerMonth?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerQuatre?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerHalfYear?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerYear?: FloatFieldUpdateOperationsInput | number
+    isSecured?: BoolFieldUpdateOperationsInput | boolean
+    rateLimit?: IntFieldUpdateOperationsInput | number
     subscriptions?: SubscriptionUncheckedUpdateManyWithoutApiNestedInput
     transactions?: TransactionUncheckedUpdateManyWithoutApiNestedInput
   }
@@ -9249,10 +9405,13 @@ export namespace Prisma {
     visibility: boolean
     isLive: boolean
     docs: string
-    suscriptionPerMonth: number
-    suscriptionQuater: number
-    suscriptionPerHalfYear: number
-    suscriptionPerYear: number
+    isPaid: boolean
+    subscriptionPerMonth: number
+    subscriptionPerQuatre: number
+    subscriptionPerHalfYear: number
+    subscriptionPerYear: number
+    isSecured: boolean
+    rateLimit: number
     apiKeys?: ApiKeyCreateNestedManyWithoutApiInput
     transactions?: TransactionCreateNestedManyWithoutApiInput
   }
@@ -9271,10 +9430,13 @@ export namespace Prisma {
     visibility: boolean
     isLive: boolean
     docs: string
-    suscriptionPerMonth: number
-    suscriptionQuater: number
-    suscriptionPerHalfYear: number
-    suscriptionPerYear: number
+    isPaid: boolean
+    subscriptionPerMonth: number
+    subscriptionPerQuatre: number
+    subscriptionPerHalfYear: number
+    subscriptionPerYear: number
+    isSecured: boolean
+    rateLimit: number
     apiKeys?: ApiKeyUncheckedCreateNestedManyWithoutApiInput
     transactions?: TransactionUncheckedCreateNestedManyWithoutApiInput
   }
@@ -9332,10 +9494,13 @@ export namespace Prisma {
     visibility?: BoolFieldUpdateOperationsInput | boolean
     isLive?: BoolFieldUpdateOperationsInput | boolean
     docs?: StringFieldUpdateOperationsInput | string
-    suscriptionPerMonth?: FloatFieldUpdateOperationsInput | number
-    suscriptionQuater?: FloatFieldUpdateOperationsInput | number
-    suscriptionPerHalfYear?: FloatFieldUpdateOperationsInput | number
-    suscriptionPerYear?: FloatFieldUpdateOperationsInput | number
+    isPaid?: BoolFieldUpdateOperationsInput | boolean
+    subscriptionPerMonth?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerQuatre?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerHalfYear?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerYear?: FloatFieldUpdateOperationsInput | number
+    isSecured?: BoolFieldUpdateOperationsInput | boolean
+    rateLimit?: IntFieldUpdateOperationsInput | number
     apiKeys?: ApiKeyUpdateManyWithoutApiNestedInput
     transactions?: TransactionUpdateManyWithoutApiNestedInput
   }
@@ -9354,10 +9519,13 @@ export namespace Prisma {
     visibility?: BoolFieldUpdateOperationsInput | boolean
     isLive?: BoolFieldUpdateOperationsInput | boolean
     docs?: StringFieldUpdateOperationsInput | string
-    suscriptionPerMonth?: FloatFieldUpdateOperationsInput | number
-    suscriptionQuater?: FloatFieldUpdateOperationsInput | number
-    suscriptionPerHalfYear?: FloatFieldUpdateOperationsInput | number
-    suscriptionPerYear?: FloatFieldUpdateOperationsInput | number
+    isPaid?: BoolFieldUpdateOperationsInput | boolean
+    subscriptionPerMonth?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerQuatre?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerHalfYear?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerYear?: FloatFieldUpdateOperationsInput | number
+    isSecured?: BoolFieldUpdateOperationsInput | boolean
+    rateLimit?: IntFieldUpdateOperationsInput | number
     apiKeys?: ApiKeyUncheckedUpdateManyWithoutApiNestedInput
     transactions?: TransactionUncheckedUpdateManyWithoutApiNestedInput
   }
@@ -9405,10 +9573,13 @@ export namespace Prisma {
     visibility: boolean
     isLive: boolean
     docs: string
-    suscriptionPerMonth: number
-    suscriptionQuater: number
-    suscriptionPerHalfYear: number
-    suscriptionPerYear: number
+    isPaid: boolean
+    subscriptionPerMonth: number
+    subscriptionPerQuatre: number
+    subscriptionPerHalfYear: number
+    subscriptionPerYear: number
+    isSecured: boolean
+    rateLimit: number
     apiKeys?: ApiKeyCreateNestedManyWithoutApiInput
     subscriptions?: SubscriptionCreateNestedManyWithoutApiInput
   }
@@ -9427,10 +9598,13 @@ export namespace Prisma {
     visibility: boolean
     isLive: boolean
     docs: string
-    suscriptionPerMonth: number
-    suscriptionQuater: number
-    suscriptionPerHalfYear: number
-    suscriptionPerYear: number
+    isPaid: boolean
+    subscriptionPerMonth: number
+    subscriptionPerQuatre: number
+    subscriptionPerHalfYear: number
+    subscriptionPerYear: number
+    isSecured: boolean
+    rateLimit: number
     apiKeys?: ApiKeyUncheckedCreateNestedManyWithoutApiInput
     subscriptions?: SubscriptionUncheckedCreateNestedManyWithoutApiInput
   }
@@ -9488,10 +9662,13 @@ export namespace Prisma {
     visibility?: BoolFieldUpdateOperationsInput | boolean
     isLive?: BoolFieldUpdateOperationsInput | boolean
     docs?: StringFieldUpdateOperationsInput | string
-    suscriptionPerMonth?: FloatFieldUpdateOperationsInput | number
-    suscriptionQuater?: FloatFieldUpdateOperationsInput | number
-    suscriptionPerHalfYear?: FloatFieldUpdateOperationsInput | number
-    suscriptionPerYear?: FloatFieldUpdateOperationsInput | number
+    isPaid?: BoolFieldUpdateOperationsInput | boolean
+    subscriptionPerMonth?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerQuatre?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerHalfYear?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerYear?: FloatFieldUpdateOperationsInput | number
+    isSecured?: BoolFieldUpdateOperationsInput | boolean
+    rateLimit?: IntFieldUpdateOperationsInput | number
     apiKeys?: ApiKeyUpdateManyWithoutApiNestedInput
     subscriptions?: SubscriptionUpdateManyWithoutApiNestedInput
   }
@@ -9510,10 +9687,13 @@ export namespace Prisma {
     visibility?: BoolFieldUpdateOperationsInput | boolean
     isLive?: BoolFieldUpdateOperationsInput | boolean
     docs?: StringFieldUpdateOperationsInput | string
-    suscriptionPerMonth?: FloatFieldUpdateOperationsInput | number
-    suscriptionQuater?: FloatFieldUpdateOperationsInput | number
-    suscriptionPerHalfYear?: FloatFieldUpdateOperationsInput | number
-    suscriptionPerYear?: FloatFieldUpdateOperationsInput | number
+    isPaid?: BoolFieldUpdateOperationsInput | boolean
+    subscriptionPerMonth?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerQuatre?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerHalfYear?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerYear?: FloatFieldUpdateOperationsInput | number
+    isSecured?: BoolFieldUpdateOperationsInput | boolean
+    rateLimit?: IntFieldUpdateOperationsInput | number
     apiKeys?: ApiKeyUncheckedUpdateManyWithoutApiNestedInput
     subscriptions?: SubscriptionUncheckedUpdateManyWithoutApiNestedInput
   }

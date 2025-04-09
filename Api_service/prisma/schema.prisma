@@ -14,58 +14,60 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
 model ApiService {
-  id                    String        @id @default(uuid())
-  publisherId           String
-  name                  String
-  description           String
-  category              ApiCategory
-  tags                  String[]
-  baseUrl               String
-  availableRoute        String[]
-  applicableFilter      String[]
-  termsOfUse            String
-  visibility            Boolean
-  isLive                Boolean
-  docs                  String
-  suscriptionPerMonth   Float
-  suscriptionQuater     Float
-  suscriptionPerHalfYear Float
-  suscriptionPerYear    Float
-  apiKeys               ApiKey[]      @relation("ServiceApiKeys")
-  subscriptions         Subscription[] @relation("ServiceSubscriptions")
-  transactions          Transaction[]  @relation("ServiceTransactions")
+  id                      String         @id @default(uuid())
+  publisherId             String
+  name                    String
+  description             String
+  category                ApiCategory
+  tags                    String[]
+  baseUrl                 String
+  availableRoute          String[]
+  applicableFilter        String[]
+  termsOfUse              String
+  visibility              Boolean
+  isLive                  Boolean
+  docs                    String
+  isPaid                  Boolean
+  subscriptionPerMonth    Float
+  subscriptionPerQuatre   Float
+  subscriptionPerHalfYear Float
+  subscriptionPerYear     Float
+  isSecured               Boolean
+  rateLimit               Int
+  apiKeys                 ApiKey[]       @relation("ServiceApiKeys")
+  subscriptions           Subscription[] @relation("ServiceSubscriptions")
+  transactions            Transaction[]  @relation("ServiceTransactions")
 }
 
 model ApiKey {
-  id          String        @id @default(uuid())
-  apiId       String
-  api         ApiService    @relation("ServiceApiKeys", fields: [apiId], references: [id])
-  userId      String
-  whereToUse  KeyUsageType
-  apiKey      String
+  id            String         @id @default(uuid())
+  apiId         String
+  api           ApiService     @relation("ServiceApiKeys", fields: [apiId], references: [id])
+  userId        String
+  whereToUse    KeyUsageType
+  apiKey        String
   subscriptions Subscription[] @relation("KeySubscriptions")
-  transactions Transaction[]  @relation("KeyTransactions")
+  transactions  Transaction[]  @relation("KeyTransactions")
 }
 
 model Subscription {
-  id        String      @id @default(uuid())
+  id        String     @id @default(uuid())
   apiId     String
-  api       ApiService  @relation("ServiceSubscriptions", fields: [apiId], references: [id])
+  api       ApiService @relation("ServiceSubscriptions", fields: [apiId], references: [id])
   apiKeyId  String
-  apiKey    ApiKey      @relation("KeySubscriptions", fields: [apiKeyId], references: [id])
+  apiKey    ApiKey     @relation("KeySubscriptions", fields: [apiKeyId], references: [id])
   userId    String
   startDate DateTime
   endDate   DateTime
 }
 
 model Transaction {
-  id            String      @id @default(uuid())
+  id            String     @id @default(uuid())
   apiId         String
-  api           ApiService  @relation("ServiceTransactions", fields: [apiId], references: [id])
+  api           ApiService @relation("ServiceTransactions", fields: [apiId], references: [id])
   apiKeyId      String
-  apiKey        ApiKey      @relation("KeyTransactions", fields: [apiKeyId], references: [id])
+  apiKey        ApiKey     @relation("KeyTransactions", fields: [apiKeyId], references: [id])
   userId        String
   date          DateTime
   amount        Float
@@ -73,7 +75,7 @@ model Transaction {
 }
 
 model Notification {
-  id          String    @id @default(uuid())
+  id          String   @id @default(uuid())
   title       String
   description String
   toUser      String
