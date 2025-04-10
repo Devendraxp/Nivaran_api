@@ -13,15 +13,16 @@ const createApiService = asyncHandler(async (req, res) => {
     category,
     tags,
     baseUrl,
+    docs,
     availableRoute,
     applicableFilter,
     termsOfUse,
     visibility,
     isLive,
-    suscriptionPerMonth,
-    suscriptionQuater,
-    suscriptionPerHalfYear,
-    suscriptionPerYear,
+    subscriptionPerMonth,
+    subscriptionPerQuatre,
+    subscriptionPerHalfYear,
+    subscriptionPerYear,
     isPaid,
     isSecured,
     rateLimit,
@@ -31,7 +32,6 @@ const createApiService = asyncHandler(async (req, res) => {
     [
       publisherId,
       name,
-      description,  // Add this field to validation
       category,
       baseUrl,
       visibility,
@@ -40,14 +40,17 @@ const createApiService = asyncHandler(async (req, res) => {
       isSecured,
       rateLimit,
     ].some((field) => {
-      return field === undefined || field === null || 
-             (typeof field === 'string' && field.trim() === "");
+      return (
+        field === undefined ||
+        field === null ||
+        (typeof field === "string" && field.trim() === "")
+      );
     })
   ) {
     throw new ApiError(400, "All fields are required");
   }
 
-  let allUsers;
+  let allApiServices;
   async function main() {
     await prisma.ApiService.create({
       data: {
@@ -56,24 +59,24 @@ const createApiService = asyncHandler(async (req, res) => {
         description,
         category,
         tags,
-        docs : "",
+        docs,
         baseUrl,
         availableRoute,
         applicableFilter,
-        termsOfUse: termsOfUse || "", // Provide a default empty string if null/undefined
+        termsOfUse,
         visibility,
         isLive,
-        subscriptionPerMonth:0,
-        subscriptionPerQuatre:0,
-        subscriptionPerHalfYear:0,
-        subscriptionPerYear:0,
+        subscriptionPerMonth,
+        subscriptionPerQuatre,
+        subscriptionPerHalfYear,
+        subscriptionPerYear,
         isPaid,
         isSecured,
         rateLimit,
       },
     });
 
-    allUsers = await prisma.ApiService.findMany({});
+    allApiServices = await prisma.ApiService.findMany({});
   }
 
   main()
@@ -82,7 +85,11 @@ const createApiService = asyncHandler(async (req, res) => {
       res
         .status(201)
         .json(
-          new ApiResponse(200, allUsers, "API Service registered successfully !!"),
+          new ApiResponse(
+            200,
+            allApiServices,
+            "API Service registered successfully !!",
+          ),
         );
     })
     .catch(async (e) => {
@@ -95,4 +102,70 @@ const createApiService = asyncHandler(async (req, res) => {
     });
 });
 
-export { createApiService };
+const getApiServises = asyncHandler(async (req, res) => {
+  let apiServices;
+  async function main(id) {
+    apiServices = await prisma.ApiService.findMany({});
+  }
+  main()
+    .then(async () => {
+      await prisma.$disconnect();
+      res
+        .status(201)
+        .json(
+          new ApiResponse(
+            200,
+            apiServices,
+            "API Service registered successfully !!",
+          ),
+        );
+    })
+    .catch(async (e) => {
+      console.error("Prisma Error:", e); // Add this line to see the actual error
+      await prisma.$disconnect();
+      throw new ApiError(
+        500,
+        "Something went wrong while registering the API service",
+      );
+    });
+});
+
+const getApiServise = asyncHandler(async (req, res) => {
+  const { id } = req.params;
+
+  if (!id) {
+    throw new ApiError(400, "Can't find id in request properly");
+  }
+  let apiService;
+  async function main(id) {
+    apiService = await prisma.ApiService.findUnique({
+      where: {
+        id: id,
+      },
+    });
+  }
+
+  main(id)
+    .then(async () => {
+      await prisma.$disconnect();
+      res
+        .status(201)
+        .json(
+          new ApiResponse(
+            200,
+            apiService,
+            "API Service fatched successfully !!",
+          ),
+        );
+    })
+    .catch(async (e) => {
+      console.error("Prisma Error:", e);
+      await prisma.$disconnect();
+      throw new ApiError(
+        500,
+        "Something went wrong while registering the API service",
+      );
+    });
+});
+
+export { createApiService, getApiServises, getApiServise };

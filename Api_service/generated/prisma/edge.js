@@ -225,18 +225,17 @@ const config = {
     "db"
   ],
   "activeProvider": "postgresql",
-  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
         "fromEnvVar": "DATABASE_URL",
-        "value": null
+        "value": "prisma+postgres://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiNjQ4NmI2MzctZDAyOS00OGZkLTlkMmQtZTBmNGE0Mzk3OTg5IiwidGVuYW50X2lkIjoiNjRlNTI2YTA1OTBmNjlkMmEyMDAzMjE4Y2RjM2FiY2VmODI1M2I2Y2E4MjZjZmUyZGYzNWNhM2YxMmI4YzE5NCIsImludGVybmFsX3NlY3JldCI6IjRiZGMxYzIzLTEyMmQtNDM1Yi04NThhLWRhOTMzNDQxMzU5ZSJ9.6_2odn727jK_mV2E1tvDHEZIT7FgfQAOzLKeajbPZ1s"
       }
     }
   },
   "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel ApiService {\n  id                      String         @id @default(uuid())\n  publisherId             String\n  name                    String\n  description             String?\n  category                ApiCategory\n  tags                    String[]\n  baseUrl                 String\n  availableRoute          String[]\n  applicableFilter        String[]\n  termsOfUse              String?\n  visibility              Boolean\n  isLive                  Boolean\n  docs                    String?\n  isPaid                  Boolean\n  subscriptionPerMonth    Float?\n  subscriptionPerQuatre   Float?\n  subscriptionPerHalfYear Float?\n  subscriptionPerYear     Float?\n  isSecured               Boolean\n  rateLimit               Int\n  apiKeys                 ApiKey[]       @relation(\"ServiceApiKeys\")\n  subscriptions           Subscription[] @relation(\"ServiceSubscriptions\")\n  transactions            Transaction[]  @relation(\"ServiceTransactions\")\n}\n\nmodel ApiKey {\n  id            String         @id @default(uuid())\n  apiId         String\n  api           ApiService     @relation(\"ServiceApiKeys\", fields: [apiId], references: [id])\n  userId        String\n  whereToUse    KeyUsageType\n  apiKey        String\n  subscriptions Subscription[] @relation(\"KeySubscriptions\")\n  transactions  Transaction[]  @relation(\"KeyTransactions\")\n}\n\nmodel Subscription {\n  id        String     @id @default(uuid())\n  apiId     String\n  api       ApiService @relation(\"ServiceSubscriptions\", fields: [apiId], references: [id])\n  apiKeyId  String\n  apiKey    ApiKey     @relation(\"KeySubscriptions\", fields: [apiKeyId], references: [id])\n  userId    String\n  startDate DateTime\n  endDate   DateTime\n}\n\nmodel Transaction {\n  id            String     @id @default(uuid())\n  apiId         String\n  api           ApiService @relation(\"ServiceTransactions\", fields: [apiId], references: [id])\n  apiKeyId      String\n  apiKey        ApiKey     @relation(\"KeyTransactions\", fields: [apiKeyId], references: [id])\n  userId        String\n  date          DateTime\n  amount        Float\n  transactionId String\n}\n\nmodel Notification {\n  id          String   @id @default(uuid())\n  title       String\n  description String\n  toUser      String\n  fromUser    String\n  url         String\n  isOpened    Boolean\n  date        DateTime\n}\n\nenum ApiCategory {\n  FINANCE\n  WEATHER\n  SOCIAL\n  MAPS\n  ECOMMERCE\n  OTHER\n}\n\nenum KeyUsageType {\n  HEADERS\n  BODY\n  PARAMETERS\n}\n",
   "inlineSchemaHash": "4f9688fc8eb49d0acaa98d988d7e9e0dfa09f0bee100757f0822fef33a50d745",
-  "copyEngine": true
+  "copyEngine": false
 }
 config.dirname = '/'
 
