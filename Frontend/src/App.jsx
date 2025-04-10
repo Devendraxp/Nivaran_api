@@ -8,6 +8,8 @@ import Marketplace from "./pages/Marketplace";
 import Purchased from "./pages/dashboard/Purchased";
 import Published from "./pages/dashboard/Published";
 import { selectTheme } from './features/themeSlice';
+import CategoryListing from "./pages/CategoryList";
+import ApiPage from "./pages/Api";
 
 function App() {
   const theme = useSelector(selectTheme);
@@ -24,6 +26,8 @@ function App() {
           <Route path="/marketplace" element={<Marketplace />} />
           <Route path="/dashboard/purchased" element={<Purchased />} />
           <Route path="/dashboard/published" element={<Published />} />
+          <Route path="/category/:categoryName" element={<CategoryListing />} />
+          <Route path="/api/:apiName" element={<ApiPage/>}/>
         </Routes>
       </main>
     </div>
