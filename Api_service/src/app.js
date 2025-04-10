@@ -1,24 +1,13 @@
-import express from 'express';
-import cors from 'cors';
-import cookieParser from 'cookie-parser';
-import bodyParser from 'body-parser';
-
+import express from "express";
 const app = express();
-app.use(cors({
-    origin: process.env.CORS_ORIGIN,
-    credentials: true
-}))
-app.use(bodyParser.urlencoded())
-app.use(bodyParser.json())
+const PORT = process.env.PORT ? process.env.PORT : 8080;
+import apiServiceRoute from "./routes/apiService.routes.js";
 
+app.use(express.json());
+// For parsing URL-encoded bodies
+app.use(express.urlencoded({ extended: true }));
 
-app.use(express.json({limit: "16kb"}))
-app.use(express.urlencoded({extended: true, limit: "16kb"}))
-app.use(express.static("public"))
-app.use(cookieParser())
+app.use("/api/v1/apiService", apiServiceRoute);
+app.get("/", (_, res) => res.send("Server is healthy... running properly !!"));
 
-
-
-
-
-export {app}
+export { app };

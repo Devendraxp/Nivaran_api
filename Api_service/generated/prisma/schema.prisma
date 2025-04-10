@@ -18,21 +18,21 @@ model ApiService {
   id                      String         @id @default(uuid())
   publisherId             String
   name                    String
-  description             String
+  description             String?
   category                ApiCategory
   tags                    String[]
   baseUrl                 String
   availableRoute          String[]
   applicableFilter        String[]
-  termsOfUse              String
+  termsOfUse              String?
   visibility              Boolean
   isLive                  Boolean
-  docs                    String
+  docs                    String?
   isPaid                  Boolean
-  subscriptionPerMonth    Float
-  subscriptionPerQuatre   Float
-  subscriptionPerHalfYear Float
-  subscriptionPerYear     Float
+  subscriptionPerMonth    Float?
+  subscriptionPerQuatre   Float?
+  subscriptionPerHalfYear Float?
+  subscriptionPerYear     Float?
   isSecured               Boolean
   rateLimit               Int
   apiKeys                 ApiKey[]       @relation("ServiceApiKeys")

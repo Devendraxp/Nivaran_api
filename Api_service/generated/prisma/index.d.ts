@@ -1618,21 +1618,21 @@ export namespace Prisma {
     id: string
     publisherId: string
     name: string
-    description: string
+    description: string | null
     category: $Enums.ApiCategory
     tags: string[]
     baseUrl: string
     availableRoute: string[]
     applicableFilter: string[]
-    termsOfUse: string
+    termsOfUse: string | null
     visibility: boolean
     isLive: boolean
-    docs: string
+    docs: string | null
     isPaid: boolean
-    subscriptionPerMonth: number
-    subscriptionPerQuatre: number
-    subscriptionPerHalfYear: number
-    subscriptionPerYear: number
+    subscriptionPerMonth: number | null
+    subscriptionPerQuatre: number | null
+    subscriptionPerHalfYear: number | null
+    subscriptionPerYear: number | null
     isSecured: boolean
     rateLimit: number
     _count: ApiServiceCountAggregateOutputType | null
@@ -1773,21 +1773,21 @@ export namespace Prisma {
       id: string
       publisherId: string
       name: string
-      description: string
+      description: string | null
       category: $Enums.ApiCategory
       tags: string[]
       baseUrl: string
       availableRoute: string[]
       applicableFilter: string[]
-      termsOfUse: string
+      termsOfUse: string | null
       visibility: boolean
       isLive: boolean
-      docs: string
+      docs: string | null
       isPaid: boolean
-      subscriptionPerMonth: number
-      subscriptionPerQuatre: number
-      subscriptionPerHalfYear: number
-      subscriptionPerYear: number
+      subscriptionPerMonth: number | null
+      subscriptionPerQuatre: number | null
+      subscriptionPerHalfYear: number | null
+      subscriptionPerYear: number | null
       isSecured: boolean
       rateLimit: number
     }, ExtArgs["result"]["apiService"]>
@@ -7175,6 +7175,14 @@ export namespace Prisma {
   export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
 
 
+  export const NullsOrder: {
+    first: 'first',
+    last: 'last'
+  };
+
+  export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
+
+
   /**
    * Field references
    */
@@ -7281,21 +7289,21 @@ export namespace Prisma {
     id?: StringFilter<"ApiService"> | string
     publisherId?: StringFilter<"ApiService"> | string
     name?: StringFilter<"ApiService"> | string
-    description?: StringFilter<"ApiService"> | string
+    description?: StringNullableFilter<"ApiService"> | string | null
     category?: EnumApiCategoryFilter<"ApiService"> | $Enums.ApiCategory
     tags?: StringNullableListFilter<"ApiService">
     baseUrl?: StringFilter<"ApiService"> | string
     availableRoute?: StringNullableListFilter<"ApiService">
     applicableFilter?: StringNullableListFilter<"ApiService">
-    termsOfUse?: StringFilter<"ApiService"> | string
+    termsOfUse?: StringNullableFilter<"ApiService"> | string | null
     visibility?: BoolFilter<"ApiService"> | boolean
     isLive?: BoolFilter<"ApiService"> | boolean
-    docs?: StringFilter<"ApiService"> | string
+    docs?: StringNullableFilter<"ApiService"> | string | null
     isPaid?: BoolFilter<"ApiService"> | boolean
-    subscriptionPerMonth?: FloatFilter<"ApiService"> | number
-    subscriptionPerQuatre?: FloatFilter<"ApiService"> | number
-    subscriptionPerHalfYear?: FloatFilter<"ApiService"> | number
-    subscriptionPerYear?: FloatFilter<"ApiService"> | number
+    subscriptionPerMonth?: FloatNullableFilter<"ApiService"> | number | null
+    subscriptionPerQuatre?: FloatNullableFilter<"ApiService"> | number | null
+    subscriptionPerHalfYear?: FloatNullableFilter<"ApiService"> | number | null
+    subscriptionPerYear?: FloatNullableFilter<"ApiService"> | number | null
     isSecured?: BoolFilter<"ApiService"> | boolean
     rateLimit?: IntFilter<"ApiService"> | number
     apiKeys?: ApiKeyListRelationFilter
@@ -7307,21 +7315,21 @@ export namespace Prisma {
     id?: SortOrder
     publisherId?: SortOrder
     name?: SortOrder
-    description?: SortOrder
+    description?: SortOrderInput | SortOrder
     category?: SortOrder
     tags?: SortOrder
     baseUrl?: SortOrder
     availableRoute?: SortOrder
     applicableFilter?: SortOrder
-    termsOfUse?: SortOrder
+    termsOfUse?: SortOrderInput | SortOrder
     visibility?: SortOrder
     isLive?: SortOrder
-    docs?: SortOrder
+    docs?: SortOrderInput | SortOrder
     isPaid?: SortOrder
-    subscriptionPerMonth?: SortOrder
-    subscriptionPerQuatre?: SortOrder
-    subscriptionPerHalfYear?: SortOrder
-    subscriptionPerYear?: SortOrder
+    subscriptionPerMonth?: SortOrderInput | SortOrder
+    subscriptionPerQuatre?: SortOrderInput | SortOrder
+    subscriptionPerHalfYear?: SortOrderInput | SortOrder
+    subscriptionPerYear?: SortOrderInput | SortOrder
     isSecured?: SortOrder
     rateLimit?: SortOrder
     apiKeys?: ApiKeyOrderByRelationAggregateInput
@@ -7336,21 +7344,21 @@ export namespace Prisma {
     NOT?: ApiServiceWhereInput | ApiServiceWhereInput[]
     publisherId?: StringFilter<"ApiService"> | string
     name?: StringFilter<"ApiService"> | string
-    description?: StringFilter<"ApiService"> | string
+    description?: StringNullableFilter<"ApiService"> | string | null
     category?: EnumApiCategoryFilter<"ApiService"> | $Enums.ApiCategory
     tags?: StringNullableListFilter<"ApiService">
     baseUrl?: StringFilter<"ApiService"> | string
     availableRoute?: StringNullableListFilter<"ApiService">
     applicableFilter?: StringNullableListFilter<"ApiService">
-    termsOfUse?: StringFilter<"ApiService"> | string
+    termsOfUse?: StringNullableFilter<"ApiService"> | string | null
     visibility?: BoolFilter<"ApiService"> | boolean
     isLive?: BoolFilter<"ApiService"> | boolean
-    docs?: StringFilter<"ApiService"> | string
+    docs?: StringNullableFilter<"ApiService"> | string | null
     isPaid?: BoolFilter<"ApiService"> | boolean
-    subscriptionPerMonth?: FloatFilter<"ApiService"> | number
-    subscriptionPerQuatre?: FloatFilter<"ApiService"> | number
-    subscriptionPerHalfYear?: FloatFilter<"ApiService"> | number
-    subscriptionPerYear?: FloatFilter<"ApiService"> | number
+    subscriptionPerMonth?: FloatNullableFilter<"ApiService"> | number | null
+    subscriptionPerQuatre?: FloatNullableFilter<"ApiService"> | number | null
+    subscriptionPerHalfYear?: FloatNullableFilter<"ApiService"> | number | null
+    subscriptionPerYear?: FloatNullableFilter<"ApiService"> | number | null
     isSecured?: BoolFilter<"ApiService"> | boolean
     rateLimit?: IntFilter<"ApiService"> | number
     apiKeys?: ApiKeyListRelationFilter
@@ -7362,21 +7370,21 @@ export namespace Prisma {
     id?: SortOrder
     publisherId?: SortOrder
     name?: SortOrder
-    description?: SortOrder
+    description?: SortOrderInput | SortOrder
     category?: SortOrder
     tags?: SortOrder
     baseUrl?: SortOrder
     availableRoute?: SortOrder
     applicableFilter?: SortOrder
-    termsOfUse?: SortOrder
+    termsOfUse?: SortOrderInput | SortOrder
     visibility?: SortOrder
     isLive?: SortOrder
-    docs?: SortOrder
+    docs?: SortOrderInput | SortOrder
     isPaid?: SortOrder
-    subscriptionPerMonth?: SortOrder
-    subscriptionPerQuatre?: SortOrder
-    subscriptionPerHalfYear?: SortOrder
-    subscriptionPerYear?: SortOrder
+    subscriptionPerMonth?: SortOrderInput | SortOrder
+    subscriptionPerQuatre?: SortOrderInput | SortOrder
+    subscriptionPerHalfYear?: SortOrderInput | SortOrder
+    subscriptionPerYear?: SortOrderInput | SortOrder
     isSecured?: SortOrder
     rateLimit?: SortOrder
     _count?: ApiServiceCountOrderByAggregateInput
@@ -7393,21 +7401,21 @@ export namespace Prisma {
     id?: StringWithAggregatesFilter<"ApiService"> | string
     publisherId?: StringWithAggregatesFilter<"ApiService"> | string
     name?: StringWithAggregatesFilter<"ApiService"> | string
-    description?: StringWithAggregatesFilter<"ApiService"> | string
+    description?: StringNullableWithAggregatesFilter<"ApiService"> | string | null
     category?: EnumApiCategoryWithAggregatesFilter<"ApiService"> | $Enums.ApiCategory
     tags?: StringNullableListFilter<"ApiService">
     baseUrl?: StringWithAggregatesFilter<"ApiService"> | string
     availableRoute?: StringNullableListFilter<"ApiService">
     applicableFilter?: StringNullableListFilter<"ApiService">
-    termsOfUse?: StringWithAggregatesFilter<"ApiService"> | string
+    termsOfUse?: StringNullableWithAggregatesFilter<"ApiService"> | string | null
     visibility?: BoolWithAggregatesFilter<"ApiService"> | boolean
     isLive?: BoolWithAggregatesFilter<"ApiService"> | boolean
-    docs?: StringWithAggregatesFilter<"ApiService"> | string
+    docs?: StringNullableWithAggregatesFilter<"ApiService"> | string | null
     isPaid?: BoolWithAggregatesFilter<"ApiService"> | boolean
-    subscriptionPerMonth?: FloatWithAggregatesFilter<"ApiService"> | number
-    subscriptionPerQuatre?: FloatWithAggregatesFilter<"ApiService"> | number
-    subscriptionPerHalfYear?: FloatWithAggregatesFilter<"ApiService"> | number
-    subscriptionPerYear?: FloatWithAggregatesFilter<"ApiService"> | number
+    subscriptionPerMonth?: FloatNullableWithAggregatesFilter<"ApiService"> | number | null
+    subscriptionPerQuatre?: FloatNullableWithAggregatesFilter<"ApiService"> | number | null
+    subscriptionPerHalfYear?: FloatNullableWithAggregatesFilter<"ApiService"> | number | null
+    subscriptionPerYear?: FloatNullableWithAggregatesFilter<"ApiService"> | number | null
     isSecured?: BoolWithAggregatesFilter<"ApiService"> | boolean
     rateLimit?: IntWithAggregatesFilter<"ApiService"> | number
   }
@@ -7677,21 +7685,21 @@ export namespace Prisma {
     id?: string
     publisherId: string
     name: string
-    description: string
+    description?: string | null
     category: $Enums.ApiCategory
     tags?: ApiServiceCreatetagsInput | string[]
     baseUrl: string
     availableRoute?: ApiServiceCreateavailableRouteInput | string[]
     applicableFilter?: ApiServiceCreateapplicableFilterInput | string[]
-    termsOfUse: string
+    termsOfUse?: string | null
     visibility: boolean
     isLive: boolean
-    docs: string
+    docs?: string | null
     isPaid: boolean
-    subscriptionPerMonth: number
-    subscriptionPerQuatre: number
-    subscriptionPerHalfYear: number
-    subscriptionPerYear: number
+    subscriptionPerMonth?: number | null
+    subscriptionPerQuatre?: number | null
+    subscriptionPerHalfYear?: number | null
+    subscriptionPerYear?: number | null
     isSecured: boolean
     rateLimit: number
     apiKeys?: ApiKeyCreateNestedManyWithoutApiInput
@@ -7703,21 +7711,21 @@ export namespace Prisma {
     id?: string
     publisherId: string
     name: string
-    description: string
+    description?: string | null
     category: $Enums.ApiCategory
     tags?: ApiServiceCreatetagsInput | string[]
     baseUrl: string
     availableRoute?: ApiServiceCreateavailableRouteInput | string[]
     applicableFilter?: ApiServiceCreateapplicableFilterInput | string[]
-    termsOfUse: string
+    termsOfUse?: string | null
     visibility: boolean
     isLive: boolean
-    docs: string
+    docs?: string | null
     isPaid: boolean
-    subscriptionPerMonth: number
-    subscriptionPerQuatre: number
-    subscriptionPerHalfYear: number
-    subscriptionPerYear: number
+    subscriptionPerMonth?: number | null
+    subscriptionPerQuatre?: number | null
+    subscriptionPerHalfYear?: number | null
+    subscriptionPerYear?: number | null
     isSecured: boolean
     rateLimit: number
     apiKeys?: ApiKeyUncheckedCreateNestedManyWithoutApiInput
@@ -7729,21 +7737,21 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     publisherId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     category?: EnumApiCategoryFieldUpdateOperationsInput | $Enums.ApiCategory
     tags?: ApiServiceUpdatetagsInput | string[]
     baseUrl?: StringFieldUpdateOperationsInput | string
     availableRoute?: ApiServiceUpdateavailableRouteInput | string[]
     applicableFilter?: ApiServiceUpdateapplicableFilterInput | string[]
-    termsOfUse?: StringFieldUpdateOperationsInput | string
+    termsOfUse?: NullableStringFieldUpdateOperationsInput | string | null
     visibility?: BoolFieldUpdateOperationsInput | boolean
     isLive?: BoolFieldUpdateOperationsInput | boolean
-    docs?: StringFieldUpdateOperationsInput | string
+    docs?: NullableStringFieldUpdateOperationsInput | string | null
     isPaid?: BoolFieldUpdateOperationsInput | boolean
-    subscriptionPerMonth?: FloatFieldUpdateOperationsInput | number
-    subscriptionPerQuatre?: FloatFieldUpdateOperationsInput | number
-    subscriptionPerHalfYear?: FloatFieldUpdateOperationsInput | number
-    subscriptionPerYear?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerMonth?: NullableFloatFieldUpdateOperationsInput | number | null
+    subscriptionPerQuatre?: NullableFloatFieldUpdateOperationsInput | number | null
+    subscriptionPerHalfYear?: NullableFloatFieldUpdateOperationsInput | number | null
+    subscriptionPerYear?: NullableFloatFieldUpdateOperationsInput | number | null
     isSecured?: BoolFieldUpdateOperationsInput | boolean
     rateLimit?: IntFieldUpdateOperationsInput | number
     apiKeys?: ApiKeyUpdateManyWithoutApiNestedInput
@@ -7755,21 +7763,21 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     publisherId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     category?: EnumApiCategoryFieldUpdateOperationsInput | $Enums.ApiCategory
     tags?: ApiServiceUpdatetagsInput | string[]
     baseUrl?: StringFieldUpdateOperationsInput | string
     availableRoute?: ApiServiceUpdateavailableRouteInput | string[]
     applicableFilter?: ApiServiceUpdateapplicableFilterInput | string[]
-    termsOfUse?: StringFieldUpdateOperationsInput | string
+    termsOfUse?: NullableStringFieldUpdateOperationsInput | string | null
     visibility?: BoolFieldUpdateOperationsInput | boolean
     isLive?: BoolFieldUpdateOperationsInput | boolean
-    docs?: StringFieldUpdateOperationsInput | string
+    docs?: NullableStringFieldUpdateOperationsInput | string | null
     isPaid?: BoolFieldUpdateOperationsInput | boolean
-    subscriptionPerMonth?: FloatFieldUpdateOperationsInput | number
-    subscriptionPerQuatre?: FloatFieldUpdateOperationsInput | number
-    subscriptionPerHalfYear?: FloatFieldUpdateOperationsInput | number
-    subscriptionPerYear?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerMonth?: NullableFloatFieldUpdateOperationsInput | number | null
+    subscriptionPerQuatre?: NullableFloatFieldUpdateOperationsInput | number | null
+    subscriptionPerHalfYear?: NullableFloatFieldUpdateOperationsInput | number | null
+    subscriptionPerYear?: NullableFloatFieldUpdateOperationsInput | number | null
     isSecured?: BoolFieldUpdateOperationsInput | boolean
     rateLimit?: IntFieldUpdateOperationsInput | number
     apiKeys?: ApiKeyUncheckedUpdateManyWithoutApiNestedInput
@@ -7781,21 +7789,21 @@ export namespace Prisma {
     id?: string
     publisherId: string
     name: string
-    description: string
+    description?: string | null
     category: $Enums.ApiCategory
     tags?: ApiServiceCreatetagsInput | string[]
     baseUrl: string
     availableRoute?: ApiServiceCreateavailableRouteInput | string[]
     applicableFilter?: ApiServiceCreateapplicableFilterInput | string[]
-    termsOfUse: string
+    termsOfUse?: string | null
     visibility: boolean
     isLive: boolean
-    docs: string
+    docs?: string | null
     isPaid: boolean
-    subscriptionPerMonth: number
-    subscriptionPerQuatre: number
-    subscriptionPerHalfYear: number
-    subscriptionPerYear: number
+    subscriptionPerMonth?: number | null
+    subscriptionPerQuatre?: number | null
+    subscriptionPerHalfYear?: number | null
+    subscriptionPerYear?: number | null
     isSecured: boolean
     rateLimit: number
   }
@@ -7804,21 +7812,21 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     publisherId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     category?: EnumApiCategoryFieldUpdateOperationsInput | $Enums.ApiCategory
     tags?: ApiServiceUpdatetagsInput | string[]
     baseUrl?: StringFieldUpdateOperationsInput | string
     availableRoute?: ApiServiceUpdateavailableRouteInput | string[]
     applicableFilter?: ApiServiceUpdateapplicableFilterInput | string[]
-    termsOfUse?: StringFieldUpdateOperationsInput | string
+    termsOfUse?: NullableStringFieldUpdateOperationsInput | string | null
     visibility?: BoolFieldUpdateOperationsInput | boolean
     isLive?: BoolFieldUpdateOperationsInput | boolean
-    docs?: StringFieldUpdateOperationsInput | string
+    docs?: NullableStringFieldUpdateOperationsInput | string | null
     isPaid?: BoolFieldUpdateOperationsInput | boolean
-    subscriptionPerMonth?: FloatFieldUpdateOperationsInput | number
-    subscriptionPerQuatre?: FloatFieldUpdateOperationsInput | number
-    subscriptionPerHalfYear?: FloatFieldUpdateOperationsInput | number
-    subscriptionPerYear?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerMonth?: NullableFloatFieldUpdateOperationsInput | number | null
+    subscriptionPerQuatre?: NullableFloatFieldUpdateOperationsInput | number | null
+    subscriptionPerHalfYear?: NullableFloatFieldUpdateOperationsInput | number | null
+    subscriptionPerYear?: NullableFloatFieldUpdateOperationsInput | number | null
     isSecured?: BoolFieldUpdateOperationsInput | boolean
     rateLimit?: IntFieldUpdateOperationsInput | number
   }
@@ -7827,21 +7835,21 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     publisherId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     category?: EnumApiCategoryFieldUpdateOperationsInput | $Enums.ApiCategory
     tags?: ApiServiceUpdatetagsInput | string[]
     baseUrl?: StringFieldUpdateOperationsInput | string
     availableRoute?: ApiServiceUpdateavailableRouteInput | string[]
     applicableFilter?: ApiServiceUpdateapplicableFilterInput | string[]
-    termsOfUse?: StringFieldUpdateOperationsInput | string
+    termsOfUse?: NullableStringFieldUpdateOperationsInput | string | null
     visibility?: BoolFieldUpdateOperationsInput | boolean
     isLive?: BoolFieldUpdateOperationsInput | boolean
-    docs?: StringFieldUpdateOperationsInput | string
+    docs?: NullableStringFieldUpdateOperationsInput | string | null
     isPaid?: BoolFieldUpdateOperationsInput | boolean
-    subscriptionPerMonth?: FloatFieldUpdateOperationsInput | number
-    subscriptionPerQuatre?: FloatFieldUpdateOperationsInput | number
-    subscriptionPerHalfYear?: FloatFieldUpdateOperationsInput | number
-    subscriptionPerYear?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerMonth?: NullableFloatFieldUpdateOperationsInput | number | null
+    subscriptionPerQuatre?: NullableFloatFieldUpdateOperationsInput | number | null
+    subscriptionPerHalfYear?: NullableFloatFieldUpdateOperationsInput | number | null
+    subscriptionPerYear?: NullableFloatFieldUpdateOperationsInput | number | null
     isSecured?: BoolFieldUpdateOperationsInput | boolean
     rateLimit?: IntFieldUpdateOperationsInput | number
   }
@@ -8130,6 +8138,21 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
+  export type StringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
+
   export type EnumApiCategoryFilter<$PrismaModel = never> = {
     equals?: $Enums.ApiCategory | EnumApiCategoryFieldRefInput<$PrismaModel>
     in?: $Enums.ApiCategory[] | ListEnumApiCategoryFieldRefInput<$PrismaModel>
@@ -8150,15 +8173,15 @@ export namespace Prisma {
     not?: NestedBoolFilter<$PrismaModel> | boolean
   }
 
-  export type FloatFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel>
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+  export type FloatNullableFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
     lt?: number | FloatFieldRefInput<$PrismaModel>
     lte?: number | FloatFieldRefInput<$PrismaModel>
     gt?: number | FloatFieldRefInput<$PrismaModel>
     gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatFilter<$PrismaModel> | number
+    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -8188,6 +8211,11 @@ export namespace Prisma {
     every?: TransactionWhereInput
     some?: TransactionWhereInput
     none?: TransactionWhereInput
+  }
+
+  export type SortOrderInput = {
+    sort: SortOrder
+    nulls?: NullsOrder
   }
 
   export type ApiKeyOrderByRelationAggregateInput = {
@@ -8299,6 +8327,24 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
+  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
   export type EnumApiCategoryWithAggregatesFilter<$PrismaModel = never> = {
     equals?: $Enums.ApiCategory | EnumApiCategoryFieldRefInput<$PrismaModel>
     in?: $Enums.ApiCategory[] | ListEnumApiCategoryFieldRefInput<$PrismaModel>
@@ -8317,20 +8363,20 @@ export namespace Prisma {
     _max?: NestedBoolFilter<$PrismaModel>
   }
 
-  export type FloatWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel>
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+  export type FloatNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
     lt?: number | FloatFieldRefInput<$PrismaModel>
     lte?: number | FloatFieldRefInput<$PrismaModel>
     gt?: number | FloatFieldRefInput<$PrismaModel>
     gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedFloatFilter<$PrismaModel>
-    _min?: NestedFloatFilter<$PrismaModel>
-    _max?: NestedFloatFilter<$PrismaModel>
+    not?: NestedFloatNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedFloatNullableFilter<$PrismaModel>
+    _min?: NestedFloatNullableFilter<$PrismaModel>
+    _max?: NestedFloatNullableFilter<$PrismaModel>
   }
 
   export type IntWithAggregatesFilter<$PrismaModel = never> = {
@@ -8452,6 +8498,17 @@ export namespace Prisma {
     _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
+  export type FloatFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatFilter<$PrismaModel> | number
+  }
+
   export type TransactionCountOrderByAggregateInput = {
     id?: SortOrder
     apiId?: SortOrder
@@ -8488,6 +8545,22 @@ export namespace Prisma {
 
   export type TransactionSumOrderByAggregateInput = {
     amount?: SortOrder
+  }
+
+  export type FloatWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedFloatFilter<$PrismaModel>
+    _min?: NestedFloatFilter<$PrismaModel>
+    _max?: NestedFloatFilter<$PrismaModel>
   }
 
   export type NotificationCountOrderByAggregateInput = {
@@ -8581,6 +8654,10 @@ export namespace Prisma {
     set?: string
   }
 
+  export type NullableStringFieldUpdateOperationsInput = {
+    set?: string | null
+  }
+
   export type EnumApiCategoryFieldUpdateOperationsInput = {
     set?: $Enums.ApiCategory
   }
@@ -8604,8 +8681,8 @@ export namespace Prisma {
     set?: boolean
   }
 
-  export type FloatFieldUpdateOperationsInput = {
-    set?: number
+  export type NullableFloatFieldUpdateOperationsInput = {
+    set?: number | null
     increment?: number
     decrement?: number
     multiply?: number
@@ -8850,6 +8927,14 @@ export namespace Prisma {
     connect?: ApiKeyWhereUniqueInput
   }
 
+  export type FloatFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
   export type ApiServiceUpdateOneRequiredWithoutTransactionsNestedInput = {
     create?: XOR<ApiServiceCreateWithoutTransactionsInput, ApiServiceUncheckedCreateWithoutTransactionsInput>
     connectOrCreate?: ApiServiceCreateOrConnectWithoutTransactionsInput
@@ -8880,6 +8965,20 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
+  export type NestedStringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
+
   export type NestedEnumApiCategoryFilter<$PrismaModel = never> = {
     equals?: $Enums.ApiCategory | EnumApiCategoryFieldRefInput<$PrismaModel>
     in?: $Enums.ApiCategory[] | ListEnumApiCategoryFieldRefInput<$PrismaModel>
@@ -8892,15 +8991,15 @@ export namespace Prisma {
     not?: NestedBoolFilter<$PrismaModel> | boolean
   }
 
-  export type NestedFloatFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel>
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+  export type NestedFloatNullableFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
     lt?: number | FloatFieldRefInput<$PrismaModel>
     lte?: number | FloatFieldRefInput<$PrismaModel>
     gt?: number | FloatFieldRefInput<$PrismaModel>
     gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatFilter<$PrismaModel> | number
+    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
   }
 
   export type NestedIntFilter<$PrismaModel = never> = {
@@ -8931,6 +9030,34 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
+  export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
   export type NestedEnumApiCategoryWithAggregatesFilter<$PrismaModel = never> = {
     equals?: $Enums.ApiCategory | EnumApiCategoryFieldRefInput<$PrismaModel>
     in?: $Enums.ApiCategory[] | ListEnumApiCategoryFieldRefInput<$PrismaModel>
@@ -8949,20 +9076,20 @@ export namespace Prisma {
     _max?: NestedBoolFilter<$PrismaModel>
   }
 
-  export type NestedFloatWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel>
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+  export type NestedFloatNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
     lt?: number | FloatFieldRefInput<$PrismaModel>
     lte?: number | FloatFieldRefInput<$PrismaModel>
     gt?: number | FloatFieldRefInput<$PrismaModel>
     gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedFloatFilter<$PrismaModel>
-    _min?: NestedFloatFilter<$PrismaModel>
-    _max?: NestedFloatFilter<$PrismaModel>
+    not?: NestedFloatNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedFloatNullableFilter<$PrismaModel>
+    _min?: NestedFloatNullableFilter<$PrismaModel>
+    _max?: NestedFloatNullableFilter<$PrismaModel>
   }
 
   export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
@@ -8979,6 +9106,17 @@ export namespace Prisma {
     _sum?: NestedIntFilter<$PrismaModel>
     _min?: NestedIntFilter<$PrismaModel>
     _max?: NestedIntFilter<$PrismaModel>
+  }
+
+  export type NestedFloatFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatFilter<$PrismaModel> | number
   }
 
   export type NestedEnumKeyUsageTypeFilter<$PrismaModel = never> = {
@@ -9021,6 +9159,22 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedDateTimeFilter<$PrismaModel>
     _max?: NestedDateTimeFilter<$PrismaModel>
+  }
+
+  export type NestedFloatWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedFloatFilter<$PrismaModel>
+    _min?: NestedFloatFilter<$PrismaModel>
+    _max?: NestedFloatFilter<$PrismaModel>
   }
 
   export type ApiKeyCreateWithoutApiInput = {
@@ -9193,21 +9347,21 @@ export namespace Prisma {
     id?: string
     publisherId: string
     name: string
-    description: string
+    description?: string | null
     category: $Enums.ApiCategory
     tags?: ApiServiceCreatetagsInput | string[]
     baseUrl: string
     availableRoute?: ApiServiceCreateavailableRouteInput | string[]
     applicableFilter?: ApiServiceCreateapplicableFilterInput | string[]
-    termsOfUse: string
+    termsOfUse?: string | null
     visibility: boolean
     isLive: boolean
-    docs: string
+    docs?: string | null
     isPaid: boolean
-    subscriptionPerMonth: number
-    subscriptionPerQuatre: number
-    subscriptionPerHalfYear: number
-    subscriptionPerYear: number
+    subscriptionPerMonth?: number | null
+    subscriptionPerQuatre?: number | null
+    subscriptionPerHalfYear?: number | null
+    subscriptionPerYear?: number | null
     isSecured: boolean
     rateLimit: number
     subscriptions?: SubscriptionCreateNestedManyWithoutApiInput
@@ -9218,21 +9372,21 @@ export namespace Prisma {
     id?: string
     publisherId: string
     name: string
-    description: string
+    description?: string | null
     category: $Enums.ApiCategory
     tags?: ApiServiceCreatetagsInput | string[]
     baseUrl: string
     availableRoute?: ApiServiceCreateavailableRouteInput | string[]
     applicableFilter?: ApiServiceCreateapplicableFilterInput | string[]
-    termsOfUse: string
+    termsOfUse?: string | null
     visibility: boolean
     isLive: boolean
-    docs: string
+    docs?: string | null
     isPaid: boolean
-    subscriptionPerMonth: number
-    subscriptionPerQuatre: number
-    subscriptionPerHalfYear: number
-    subscriptionPerYear: number
+    subscriptionPerMonth?: number | null
+    subscriptionPerQuatre?: number | null
+    subscriptionPerHalfYear?: number | null
+    subscriptionPerYear?: number | null
     isSecured: boolean
     rateLimit: number
     subscriptions?: SubscriptionUncheckedCreateNestedManyWithoutApiInput
@@ -9313,21 +9467,21 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     publisherId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     category?: EnumApiCategoryFieldUpdateOperationsInput | $Enums.ApiCategory
     tags?: ApiServiceUpdatetagsInput | string[]
     baseUrl?: StringFieldUpdateOperationsInput | string
     availableRoute?: ApiServiceUpdateavailableRouteInput | string[]
     applicableFilter?: ApiServiceUpdateapplicableFilterInput | string[]
-    termsOfUse?: StringFieldUpdateOperationsInput | string
+    termsOfUse?: NullableStringFieldUpdateOperationsInput | string | null
     visibility?: BoolFieldUpdateOperationsInput | boolean
     isLive?: BoolFieldUpdateOperationsInput | boolean
-    docs?: StringFieldUpdateOperationsInput | string
+    docs?: NullableStringFieldUpdateOperationsInput | string | null
     isPaid?: BoolFieldUpdateOperationsInput | boolean
-    subscriptionPerMonth?: FloatFieldUpdateOperationsInput | number
-    subscriptionPerQuatre?: FloatFieldUpdateOperationsInput | number
-    subscriptionPerHalfYear?: FloatFieldUpdateOperationsInput | number
-    subscriptionPerYear?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerMonth?: NullableFloatFieldUpdateOperationsInput | number | null
+    subscriptionPerQuatre?: NullableFloatFieldUpdateOperationsInput | number | null
+    subscriptionPerHalfYear?: NullableFloatFieldUpdateOperationsInput | number | null
+    subscriptionPerYear?: NullableFloatFieldUpdateOperationsInput | number | null
     isSecured?: BoolFieldUpdateOperationsInput | boolean
     rateLimit?: IntFieldUpdateOperationsInput | number
     subscriptions?: SubscriptionUpdateManyWithoutApiNestedInput
@@ -9338,21 +9492,21 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     publisherId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     category?: EnumApiCategoryFieldUpdateOperationsInput | $Enums.ApiCategory
     tags?: ApiServiceUpdatetagsInput | string[]
     baseUrl?: StringFieldUpdateOperationsInput | string
     availableRoute?: ApiServiceUpdateavailableRouteInput | string[]
     applicableFilter?: ApiServiceUpdateapplicableFilterInput | string[]
-    termsOfUse?: StringFieldUpdateOperationsInput | string
+    termsOfUse?: NullableStringFieldUpdateOperationsInput | string | null
     visibility?: BoolFieldUpdateOperationsInput | boolean
     isLive?: BoolFieldUpdateOperationsInput | boolean
-    docs?: StringFieldUpdateOperationsInput | string
+    docs?: NullableStringFieldUpdateOperationsInput | string | null
     isPaid?: BoolFieldUpdateOperationsInput | boolean
-    subscriptionPerMonth?: FloatFieldUpdateOperationsInput | number
-    subscriptionPerQuatre?: FloatFieldUpdateOperationsInput | number
-    subscriptionPerHalfYear?: FloatFieldUpdateOperationsInput | number
-    subscriptionPerYear?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerMonth?: NullableFloatFieldUpdateOperationsInput | number | null
+    subscriptionPerQuatre?: NullableFloatFieldUpdateOperationsInput | number | null
+    subscriptionPerHalfYear?: NullableFloatFieldUpdateOperationsInput | number | null
+    subscriptionPerYear?: NullableFloatFieldUpdateOperationsInput | number | null
     isSecured?: BoolFieldUpdateOperationsInput | boolean
     rateLimit?: IntFieldUpdateOperationsInput | number
     subscriptions?: SubscriptionUncheckedUpdateManyWithoutApiNestedInput
@@ -9395,21 +9549,21 @@ export namespace Prisma {
     id?: string
     publisherId: string
     name: string
-    description: string
+    description?: string | null
     category: $Enums.ApiCategory
     tags?: ApiServiceCreatetagsInput | string[]
     baseUrl: string
     availableRoute?: ApiServiceCreateavailableRouteInput | string[]
     applicableFilter?: ApiServiceCreateapplicableFilterInput | string[]
-    termsOfUse: string
+    termsOfUse?: string | null
     visibility: boolean
     isLive: boolean
-    docs: string
+    docs?: string | null
     isPaid: boolean
-    subscriptionPerMonth: number
-    subscriptionPerQuatre: number
-    subscriptionPerHalfYear: number
-    subscriptionPerYear: number
+    subscriptionPerMonth?: number | null
+    subscriptionPerQuatre?: number | null
+    subscriptionPerHalfYear?: number | null
+    subscriptionPerYear?: number | null
     isSecured: boolean
     rateLimit: number
     apiKeys?: ApiKeyCreateNestedManyWithoutApiInput
@@ -9420,21 +9574,21 @@ export namespace Prisma {
     id?: string
     publisherId: string
     name: string
-    description: string
+    description?: string | null
     category: $Enums.ApiCategory
     tags?: ApiServiceCreatetagsInput | string[]
     baseUrl: string
     availableRoute?: ApiServiceCreateavailableRouteInput | string[]
     applicableFilter?: ApiServiceCreateapplicableFilterInput | string[]
-    termsOfUse: string
+    termsOfUse?: string | null
     visibility: boolean
     isLive: boolean
-    docs: string
+    docs?: string | null
     isPaid: boolean
-    subscriptionPerMonth: number
-    subscriptionPerQuatre: number
-    subscriptionPerHalfYear: number
-    subscriptionPerYear: number
+    subscriptionPerMonth?: number | null
+    subscriptionPerQuatre?: number | null
+    subscriptionPerHalfYear?: number | null
+    subscriptionPerYear?: number | null
     isSecured: boolean
     rateLimit: number
     apiKeys?: ApiKeyUncheckedCreateNestedManyWithoutApiInput
@@ -9484,21 +9638,21 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     publisherId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     category?: EnumApiCategoryFieldUpdateOperationsInput | $Enums.ApiCategory
     tags?: ApiServiceUpdatetagsInput | string[]
     baseUrl?: StringFieldUpdateOperationsInput | string
     availableRoute?: ApiServiceUpdateavailableRouteInput | string[]
     applicableFilter?: ApiServiceUpdateapplicableFilterInput | string[]
-    termsOfUse?: StringFieldUpdateOperationsInput | string
+    termsOfUse?: NullableStringFieldUpdateOperationsInput | string | null
     visibility?: BoolFieldUpdateOperationsInput | boolean
     isLive?: BoolFieldUpdateOperationsInput | boolean
-    docs?: StringFieldUpdateOperationsInput | string
+    docs?: NullableStringFieldUpdateOperationsInput | string | null
     isPaid?: BoolFieldUpdateOperationsInput | boolean
-    subscriptionPerMonth?: FloatFieldUpdateOperationsInput | number
-    subscriptionPerQuatre?: FloatFieldUpdateOperationsInput | number
-    subscriptionPerHalfYear?: FloatFieldUpdateOperationsInput | number
-    subscriptionPerYear?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerMonth?: NullableFloatFieldUpdateOperationsInput | number | null
+    subscriptionPerQuatre?: NullableFloatFieldUpdateOperationsInput | number | null
+    subscriptionPerHalfYear?: NullableFloatFieldUpdateOperationsInput | number | null
+    subscriptionPerYear?: NullableFloatFieldUpdateOperationsInput | number | null
     isSecured?: BoolFieldUpdateOperationsInput | boolean
     rateLimit?: IntFieldUpdateOperationsInput | number
     apiKeys?: ApiKeyUpdateManyWithoutApiNestedInput
@@ -9509,21 +9663,21 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     publisherId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     category?: EnumApiCategoryFieldUpdateOperationsInput | $Enums.ApiCategory
     tags?: ApiServiceUpdatetagsInput | string[]
     baseUrl?: StringFieldUpdateOperationsInput | string
     availableRoute?: ApiServiceUpdateavailableRouteInput | string[]
     applicableFilter?: ApiServiceUpdateapplicableFilterInput | string[]
-    termsOfUse?: StringFieldUpdateOperationsInput | string
+    termsOfUse?: NullableStringFieldUpdateOperationsInput | string | null
     visibility?: BoolFieldUpdateOperationsInput | boolean
     isLive?: BoolFieldUpdateOperationsInput | boolean
-    docs?: StringFieldUpdateOperationsInput | string
+    docs?: NullableStringFieldUpdateOperationsInput | string | null
     isPaid?: BoolFieldUpdateOperationsInput | boolean
-    subscriptionPerMonth?: FloatFieldUpdateOperationsInput | number
-    subscriptionPerQuatre?: FloatFieldUpdateOperationsInput | number
-    subscriptionPerHalfYear?: FloatFieldUpdateOperationsInput | number
-    subscriptionPerYear?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerMonth?: NullableFloatFieldUpdateOperationsInput | number | null
+    subscriptionPerQuatre?: NullableFloatFieldUpdateOperationsInput | number | null
+    subscriptionPerHalfYear?: NullableFloatFieldUpdateOperationsInput | number | null
+    subscriptionPerYear?: NullableFloatFieldUpdateOperationsInput | number | null
     isSecured?: BoolFieldUpdateOperationsInput | boolean
     rateLimit?: IntFieldUpdateOperationsInput | number
     apiKeys?: ApiKeyUncheckedUpdateManyWithoutApiNestedInput
@@ -9563,21 +9717,21 @@ export namespace Prisma {
     id?: string
     publisherId: string
     name: string
-    description: string
+    description?: string | null
     category: $Enums.ApiCategory
     tags?: ApiServiceCreatetagsInput | string[]
     baseUrl: string
     availableRoute?: ApiServiceCreateavailableRouteInput | string[]
     applicableFilter?: ApiServiceCreateapplicableFilterInput | string[]
-    termsOfUse: string
+    termsOfUse?: string | null
     visibility: boolean
     isLive: boolean
-    docs: string
+    docs?: string | null
     isPaid: boolean
-    subscriptionPerMonth: number
-    subscriptionPerQuatre: number
-    subscriptionPerHalfYear: number
-    subscriptionPerYear: number
+    subscriptionPerMonth?: number | null
+    subscriptionPerQuatre?: number | null
+    subscriptionPerHalfYear?: number | null
+    subscriptionPerYear?: number | null
     isSecured: boolean
     rateLimit: number
     apiKeys?: ApiKeyCreateNestedManyWithoutApiInput
@@ -9588,21 +9742,21 @@ export namespace Prisma {
     id?: string
     publisherId: string
     name: string
-    description: string
+    description?: string | null
     category: $Enums.ApiCategory
     tags?: ApiServiceCreatetagsInput | string[]
     baseUrl: string
     availableRoute?: ApiServiceCreateavailableRouteInput | string[]
     applicableFilter?: ApiServiceCreateapplicableFilterInput | string[]
-    termsOfUse: string
+    termsOfUse?: string | null
     visibility: boolean
     isLive: boolean
-    docs: string
+    docs?: string | null
     isPaid: boolean
-    subscriptionPerMonth: number
-    subscriptionPerQuatre: number
-    subscriptionPerHalfYear: number
-    subscriptionPerYear: number
+    subscriptionPerMonth?: number | null
+    subscriptionPerQuatre?: number | null
+    subscriptionPerHalfYear?: number | null
+    subscriptionPerYear?: number | null
     isSecured: boolean
     rateLimit: number
     apiKeys?: ApiKeyUncheckedCreateNestedManyWithoutApiInput
@@ -9652,21 +9806,21 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     publisherId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     category?: EnumApiCategoryFieldUpdateOperationsInput | $Enums.ApiCategory
     tags?: ApiServiceUpdatetagsInput | string[]
     baseUrl?: StringFieldUpdateOperationsInput | string
     availableRoute?: ApiServiceUpdateavailableRouteInput | string[]
     applicableFilter?: ApiServiceUpdateapplicableFilterInput | string[]
-    termsOfUse?: StringFieldUpdateOperationsInput | string
+    termsOfUse?: NullableStringFieldUpdateOperationsInput | string | null
     visibility?: BoolFieldUpdateOperationsInput | boolean
     isLive?: BoolFieldUpdateOperationsInput | boolean
-    docs?: StringFieldUpdateOperationsInput | string
+    docs?: NullableStringFieldUpdateOperationsInput | string | null
     isPaid?: BoolFieldUpdateOperationsInput | boolean
-    subscriptionPerMonth?: FloatFieldUpdateOperationsInput | number
-    subscriptionPerQuatre?: FloatFieldUpdateOperationsInput | number
-    subscriptionPerHalfYear?: FloatFieldUpdateOperationsInput | number
-    subscriptionPerYear?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerMonth?: NullableFloatFieldUpdateOperationsInput | number | null
+    subscriptionPerQuatre?: NullableFloatFieldUpdateOperationsInput | number | null
+    subscriptionPerHalfYear?: NullableFloatFieldUpdateOperationsInput | number | null
+    subscriptionPerYear?: NullableFloatFieldUpdateOperationsInput | number | null
     isSecured?: BoolFieldUpdateOperationsInput | boolean
     rateLimit?: IntFieldUpdateOperationsInput | number
     apiKeys?: ApiKeyUpdateManyWithoutApiNestedInput
@@ -9677,21 +9831,21 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     publisherId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     category?: EnumApiCategoryFieldUpdateOperationsInput | $Enums.ApiCategory
     tags?: ApiServiceUpdatetagsInput | string[]
     baseUrl?: StringFieldUpdateOperationsInput | string
     availableRoute?: ApiServiceUpdateavailableRouteInput | string[]
     applicableFilter?: ApiServiceUpdateapplicableFilterInput | string[]
-    termsOfUse?: StringFieldUpdateOperationsInput | string
+    termsOfUse?: NullableStringFieldUpdateOperationsInput | string | null
     visibility?: BoolFieldUpdateOperationsInput | boolean
     isLive?: BoolFieldUpdateOperationsInput | boolean
-    docs?: StringFieldUpdateOperationsInput | string
+    docs?: NullableStringFieldUpdateOperationsInput | string | null
     isPaid?: BoolFieldUpdateOperationsInput | boolean
-    subscriptionPerMonth?: FloatFieldUpdateOperationsInput | number
-    subscriptionPerQuatre?: FloatFieldUpdateOperationsInput | number
-    subscriptionPerHalfYear?: FloatFieldUpdateOperationsInput | number
-    subscriptionPerYear?: FloatFieldUpdateOperationsInput | number
+    subscriptionPerMonth?: NullableFloatFieldUpdateOperationsInput | number | null
+    subscriptionPerQuatre?: NullableFloatFieldUpdateOperationsInput | number | null
+    subscriptionPerHalfYear?: NullableFloatFieldUpdateOperationsInput | number | null
+    subscriptionPerYear?: NullableFloatFieldUpdateOperationsInput | number | null
     isSecured?: BoolFieldUpdateOperationsInput | boolean
     rateLimit?: IntFieldUpdateOperationsInput | number
     apiKeys?: ApiKeyUncheckedUpdateManyWithoutApiNestedInput

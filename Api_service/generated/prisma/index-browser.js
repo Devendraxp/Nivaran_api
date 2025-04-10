@@ -187,6 +187,11 @@ exports.Prisma.QueryMode = {
   default: 'default',
   insensitive: 'insensitive'
 };
+
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
+};
 exports.ApiCategory = exports.$Enums.ApiCategory = {
   FINANCE: 'FINANCE',
   WEATHER: 'WEATHER',
